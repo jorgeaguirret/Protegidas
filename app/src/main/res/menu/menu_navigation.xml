@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboard"
+        android:title="Panel de Alerta"
+        android:icon="@drawable/ic_dashboard"/>
+    <item
+        android:id="@+id/close_friends"
+        android:title="Circulo Cercano"
+        android:icon="@drawable/ic_people"/>
+
+    <item
+        android:id="@+id/settings"
+        android:title="Ajustes"
+        android:icon="@drawable/ic_settings"/>
+    <item
+        android:id="@+id/description"
+        android:title="Como utilizar"
+        android:icon="@drawable/ic_help"/>
+    <item
+        android:id="@+id/about"
+        android:title="Nosotros"
+        android:icon="@drawable/ic_info"/>
+
+
+</menu>

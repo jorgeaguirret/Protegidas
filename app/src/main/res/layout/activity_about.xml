@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About"
+    android:background="@drawable/gradient_background">
+
+
+    <TextView
+        android:id="@+id/loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="SOBRE NOSOTROS"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorLink="#000000"
+        android:textIsSelectable="true"
+        android:textSize="22sp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="325dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:elegantTextHeight="true"
+            android:lineHeight="30dp"
+            android:padding="15dp"
+            android:text="Esta aplicación ha sido desarrollada por el equipo de Aym Informática. Los miembros del equipo son: "
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="160dp"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:text="Juan Barra Urbina "
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="205dp"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:text="Francisco Riveros Arias"
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="255dp"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:text="Jorge Aguirre Toledo"
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="Estudiantes de ..."
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="45dp"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:paddingLeft="15dp"
+            android:text="Universidad Tecnológica de Chile"
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="85dp"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:paddingLeft="15dp"
+            android:text="Inacap, Maipú"
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="63dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="125dp"
+            android:elegantTextHeight="true"
+            android:padding="10dp"
+            android:paddingLeft="15dp"
+            android:text="www.protegidas.cl"
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bottom_navigation_gradient"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation" />
+
+</RelativeLayout>
