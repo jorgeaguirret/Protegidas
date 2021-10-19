@@ -39,7 +39,7 @@
 
         <activity android:name=".History" />
         <activity android:name=".Emergency_dial" />
-        <activity android:name=".HomeLocation" />
+        <activity android:name=".UbicacionCasa" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

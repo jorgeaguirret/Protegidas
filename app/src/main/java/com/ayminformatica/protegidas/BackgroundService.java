@@ -6,19 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
-import android.os.Bundle;
 import android.os.IBinder;
-import android.provider.Settings;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.Intent.getIntent;
-import static android.content.Intent.getIntentOld;
-import com.ayminformatica.protegidas.R;
 
 public class BackgroundService extends Service {
 
@@ -26,7 +19,7 @@ public class BackgroundService extends Service {
     static int battery_level=0;
     static int automatic_alert_battery=0;
     double currLat,currLong;
-    LocationTrack locationTrack,lt;
+    SeguimientoUbicacion locationTrack,lt;
 
 
     @Nullable
@@ -41,8 +34,8 @@ public class BackgroundService extends Service {
         batterylevel();
         System.out.println("Battery level hai "+BackgroundService.battery_level);
 
-        lt=new LocationTrack(BackgroundService.this);
-        locationTrack = new LocationTrack(BackgroundService.this);
+        lt=new SeguimientoUbicacion(BackgroundService.this);
+        locationTrack = new SeguimientoUbicacion(BackgroundService.this);
 
 
         if (locationTrack.canGetLocation()) {

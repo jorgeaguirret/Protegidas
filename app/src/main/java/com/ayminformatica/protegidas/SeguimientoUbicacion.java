@@ -4,31 +4,22 @@ package com.ayminformatica.protegidas;
 import android.Manifest;
 import android.app.Service;
 import android.content.Context;
-import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.Build;
 import android.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.core.app.ActivityCompat;
 import android.provider.Settings;
 
 import android.os.Bundle;
 import android.os.IBinder;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
-
-public class LocationTrack extends Service implements LocationListener {
+public class SeguimientoUbicacion extends Service implements LocationListener {
 
     private final Context mContext;
 
@@ -51,12 +42,12 @@ public class LocationTrack extends Service implements LocationListener {
     private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1;
     protected LocationManager locationManager;
 
-    public LocationTrack(MainActivity mContext) {
+    public SeguimientoUbicacion(MainActivity mContext) {
         this.mContext = mContext;
         getLocation();
     }
 
-    public LocationTrack(BackgroundService mContext) {
+    public SeguimientoUbicacion(BackgroundService mContext) {
         this.mContext = mContext;
         getLocation();
     }
@@ -207,7 +198,7 @@ public class LocationTrack extends Service implements LocationListener {
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            locationManager.removeUpdates(LocationTrack.this);
+            locationManager.removeUpdates(SeguimientoUbicacion.this);
         }
     }
 

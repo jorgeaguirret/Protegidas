@@ -6,12 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -103,8 +101,8 @@ public class Dashboard extends AppCompatActivity {
         alert = findViewById(R.id.send_alert);
         currLat=MainActivity.currLat;
         currLong=MainActivity.currLong;
-        double homeLat=HomeLocation.homeLat;
-        double homeLong=HomeLocation.homeLong;
+        double homeLat= UbicacionCasa.homeLat;
+        double homeLong= UbicacionCasa.homeLong;
         String diff = String.format("%.2f",distance(currLat,homeLat,currLong,homeLong));
        // tv.setText("Distance between home and your current location is "+diff+" km");
 

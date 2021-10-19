@@ -1,41 +1,19 @@
 package com.ayminformatica.protegidas;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.Manifest;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
-import android.provider.Settings;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ayminformatica.protegidas.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 
 import android.annotation.TargetApi;
-import android.content.DialogInterface;
-import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -54,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public static double currLat=0;
 
     private final static int ALL_PERMISSIONS_RESULT = 101;
-    LocationTrack locationTrack,lt;
+    SeguimientoUbicacion locationTrack,lt;
     TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        lt=new LocationTrack(MainActivity.this);
-        locationTrack = new LocationTrack(MainActivity.this);
+        lt=new SeguimientoUbicacion(MainActivity.this);
+        locationTrack = new SeguimientoUbicacion(MainActivity.this);
 
 
         if (locationTrack.canGetLocation()) {
@@ -130,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
 //
 //        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
 //                .putBoolean("isFirstRun", false).commit();
-        if(HomeLocation.homeLong==0 && HomeLocation.homeLat==0) {
-            Intent myIntent = new Intent(getApplicationContext(), HomeLocation.class);
+        if(UbicacionCasa.homeLong==0 && UbicacionCasa.homeLat==0) {
+            Intent myIntent = new Intent(getApplicationContext(), UbicacionCasa.class);
             startActivityForResult(myIntent, 0);
             onBackPressed();
         }
@@ -142,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
         tv = findViewById(R.id.loc);
         double currLat=MainActivity.currLat;
         double currLong=MainActivity.currLong;
-        double homeLat=HomeLocation.homeLat;
-        double homeLong=HomeLocation.homeLong;
+        double homeLat= UbicacionCasa.homeLat;
+        double homeLong= UbicacionCasa.homeLong;
 
        // tv.setText("Current data"+currLat+"-"+currLong+". Home data "+homeLat+"-"+homeLong);
 

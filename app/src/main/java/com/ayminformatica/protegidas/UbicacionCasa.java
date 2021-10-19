@@ -2,7 +2,6 @@ package com.ayminformatica.protegidas;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
@@ -12,13 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.ayminformatica.protegidas.R;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
-public class HomeLocation extends AppCompatActivity {
+public class UbicacionCasa extends AppCompatActivity {
     Button btPicker;
     TextView textview;
     int PLACE_PICKER_REQUEST = 1;
@@ -40,7 +38,7 @@ public class HomeLocation extends AppCompatActivity {
             public void onClick(View v) {
                 PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                 try {
-                    startActivityForResult(builder.build(HomeLocation.this),
+                    startActivityForResult(builder.build(UbicacionCasa.this),
                             PLACE_PICKER_REQUEST);
                 } catch (GooglePlayServicesRepairableException e) {
                     e.printStackTrace();
@@ -76,7 +74,7 @@ public class HomeLocation extends AppCompatActivity {
 
     }
     private void showMessageOKCancel(String message) {
-        new android.app.AlertDialog.Builder(HomeLocation.this)
+        new android.app.AlertDialog.Builder(UbicacionCasa.this)
                 .setMessage(message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
