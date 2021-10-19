@@ -167,7 +167,7 @@ public class Panel_Alerta extends AppCompatActivity {
 
 
 
-        //---------------------------------------------
+        //-----------MENU NAVEGACION-----------
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 

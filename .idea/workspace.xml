@@ -13,9 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81b0023a-f60c-48be-8d5e-33c7d514f4e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Llamada_emergencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Llamada_emergencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_llamada_emergencia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_llamada_emergencia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Panel_Alerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Panel_Alerta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
