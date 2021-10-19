@@ -49,7 +49,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean addOne(ContactModel contactModel,int id){
+    public boolean addOne(ModeloContacto contactModel, int id){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -69,7 +69,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return insert==-1?false:true;
     }
 
-    public boolean addOneAlert(AlertModel alertModel){
+    public boolean addOneAlert(ModeloAlerta alertModel){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -87,8 +87,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return insert==-1?false:true;
     }
 
-    public List<ContactModel> getEveryone(){
-        List<ContactModel> returnList = new ArrayList<>();
+    public List<ModeloContacto> getEveryone(){
+        List<ModeloContacto> returnList = new ArrayList<>();
 
         String queryString= "SELECT * FROM "+CONTACTO_TABLE;
         SQLiteDatabase db = getReadableDatabase();
@@ -102,7 +102,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 String nombreContacto = cursor.getString(1);
                 String fonoContacto = cursor.getString(2);
                 System.out.println("getting "+fonoContacto);
-                ContactModel nuevoContacto = new ContactModel(contactID,nombreContacto,fonoContacto);
+                ModeloContacto nuevoContacto = new ModeloContacto(contactID,nombreContacto,fonoContacto);
                 returnList.add(nuevoContacto);
             }while (cursor.moveToNext());
         }else{
@@ -113,8 +113,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return returnList;
     }
 
-    public List<AlertModel> getAllAlerts(){
-        List<AlertModel> returnList = new ArrayList<>();
+    public List<ModeloAlerta> getAllAlerts(){
+        List<ModeloAlerta> returnList = new ArrayList<>();
 
         String queryString= "SELECT * FROM "+ TABLA_ALERTA;
         SQLiteDatabase db = getReadableDatabase();
@@ -136,7 +136,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 String nombreContacto3 = cursor.getString(9);
                 String fonoContacto3 = cursor.getString(10);
 
-                AlertModel newAlert = new AlertModel(alertID,bateria,ubicacion,mensajeAlerta,horaCreada,nombreContacto1,nombreContacto2,nombreContacto3,fonoContacto1,fonoContacto2,fonoContacto3);
+                ModeloAlerta newAlert = new ModeloAlerta(alertID,bateria,ubicacion,mensajeAlerta,horaCreada,nombreContacto1,nombreContacto2,nombreContacto3,fonoContacto1,fonoContacto2,fonoContacto3);
                 returnList.add(newAlert);
             }while (cursor.moveToNext());
         }else{

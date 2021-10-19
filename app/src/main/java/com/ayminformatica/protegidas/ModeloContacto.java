@@ -1,11 +1,11 @@
 package com.ayminformatica.protegidas;
 
-public class ContactModel {
+public class ModeloContacto {
     private int id;
     private String nombre;
     private String fono;
 
-    public ContactModel(int id, String nombre, String fono) {
+    public ModeloContacto(int id, String nombre, String fono) {
         this.id = id;
         this.nombre = nombre;
         this.fono = fono;

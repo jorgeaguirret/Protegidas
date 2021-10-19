@@ -77,7 +77,7 @@ public class BackgroundService extends Service {
         final ArrayList<String> name= new ArrayList<>();
 
         DataBaseHelper dataBaseHelper = new DataBaseHelper(BackgroundService.this);
-        List<ContactModel> everyone = dataBaseHelper.getEveryone();
+        List<ModeloContacto> everyone = dataBaseHelper.getEveryone();
         System.out.println(everyone.toString());
         if(!everyone.isEmpty()) {
             phone.add(everyone.get(0).getFono());

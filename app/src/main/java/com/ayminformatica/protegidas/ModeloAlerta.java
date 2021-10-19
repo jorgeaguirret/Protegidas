@@ -1,6 +1,6 @@
 package com.ayminformatica.protegidas;
 
-public class AlertModel {
+public class ModeloAlerta {
     private int id;
     private int bateria;
     private String ubicacion;
@@ -8,7 +8,7 @@ public class AlertModel {
     private String nombreContacto1, nombreContacto2, nombreContacto3;
     private String fonoContacto1, fonoContacto2, fonoContacto3;
 
-    public AlertModel(int id, int bateria, String ubicacion, String mensajeAlerta, String nombreContacto1, String nombreContacto2, String nombreContacto3, String fonoContacto1, String fonoContacto2, String fonoContacto3) {
+    public ModeloAlerta(int id, int bateria, String ubicacion, String mensajeAlerta, String nombreContacto1, String nombreContacto2, String nombreContacto3, String fonoContacto1, String fonoContacto2, String fonoContacto3) {
         this.id = id;
         this.bateria = bateria;
         this.ubicacion = ubicacion;
@@ -21,7 +21,7 @@ public class AlertModel {
         this.fonoContacto3 = fonoContacto3;
     }
 
-    public AlertModel(int id, int bateria, String ubicacion, String mensajeAlerta,String horaCreada, String nombreContacto1, String nombreContacto2, String nombreContacto3, String fonoContacto1, String fonoContacto2, String fonoContacto3) {
+    public ModeloAlerta(int id, int bateria, String ubicacion, String mensajeAlerta, String horaCreada, String nombreContacto1, String nombreContacto2, String nombreContacto3, String fonoContacto1, String fonoContacto2, String fonoContacto3) {
         this.id = id;
         this.bateria = bateria;
         this.ubicacion = ubicacion;

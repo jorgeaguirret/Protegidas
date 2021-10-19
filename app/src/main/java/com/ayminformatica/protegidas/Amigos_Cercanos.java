@@ -15,23 +15,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ayminformatica.protegidas.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Close_Friends extends AppCompatActivity {
+public class Amigos_Cercanos extends AppCompatActivity {
     Button agregar_c;
     EditText agregar_no1, agregar_no2, agregar_no3;
     Cursor cursor = null;
     static String fono1, fono2, fono3;
-    DataBaseHelper dataBaseHelper = new DataBaseHelper(Close_Friends.this);
+    DataBaseHelper dataBaseHelper = new DataBaseHelper(Amigos_Cercanos.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_close__friends);
+        setContentView(R.layout.activity_amigos_cercanos);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
@@ -40,9 +38,9 @@ public class Close_Friends extends AppCompatActivity {
         agregar_no2 = (EditText)findViewById(R.id.fono2);
         agregar_no3 = (EditText)findViewById(R.id.fono3);
 
-        List<ContactModel> everyone = dataBaseHelper.getEveryone();
+        List<ModeloContacto> everyone = dataBaseHelper.getEveryone();
         if(!everyone.isEmpty()) {
-            for(ContactModel i:everyone)
+            for(ModeloContacto i:everyone)
                 System.out.println(i.getNombre());
             try {
                 agregar_no1.setText(everyone.get(0).getFono());
@@ -72,26 +70,26 @@ public class Close_Friends extends AppCompatActivity {
                 switch(menuItem.getItemId()){
                     case R.id.dashboard:
                         startActivity(new Intent(getApplicationContext(),
-                                Dashboard.class));
+                                Panel_Alerta.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.about:
                         startActivity(new Intent(getApplicationContext(),
-                                About.class));
+                                SobreNosotros.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.settings:
                         startActivity(new Intent(getApplicationContext(),
-                                Settings.class));
+                                Ajustes.class));
                         overridePendingTransition(0,0);
                         return true;
 
 
                     case R.id.description:
                         startActivity(new Intent(getApplicationContext(),
-                                Description.class));
+                                Descripcion.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -179,11 +177,11 @@ public class Close_Friends extends AppCompatActivity {
                 {
                     String fono = cursor.getString(0);
                     String nombre = cursor.getString(1);
-                    ContactModel contactModel = new ContactModel(codigoSolicitud,nombre,fono);
+                    ModeloContacto contactModel = new ModeloContacto(codigoSolicitud,nombre,fono);
                     agregar_no1.setText(fono);
                     boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
                     String ToastMsg = status==true?"Contactooo added successfully":"Error in adding contact";
-                    Toast.makeText(Close_Friends.this,ToastMsg,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Amigos_Cercanos.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }
             catch (Exception e)
@@ -202,11 +200,11 @@ public class Close_Friends extends AppCompatActivity {
                 {
                     String fono = cursor.getString(0);
                     String nombre = cursor.getString(1);
-                    ContactModel contactModel = new ContactModel(codigoSolicitud,nombre,fono);
+                    ModeloContacto contactModel = new ModeloContacto(codigoSolicitud,nombre,fono);
                     agregar_no2.setText(fono);
                     boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
                     String ToastMsg = status==true?"Contact addedddddddd successfully":"Error in adding contact";
-                    Toast.makeText(Close_Friends.this,ToastMsg,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Amigos_Cercanos.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }
             catch (Exception e)
@@ -225,11 +223,11 @@ public class Close_Friends extends AppCompatActivity {
                 {
                     String fono = cursor.getString(0);
                     String nombre = cursor.getString(1);
-                    ContactModel contactModel = new ContactModel(codigoSolicitud,nombre,fono);
+                    ModeloContacto contactModel = new ModeloContacto(codigoSolicitud,nombre,fono);
                     agregar_no3.setText(fono);
                     boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
                     String ToastMsg = status==true?"Contact added successfullyyyy":"Error in adding contact";
-                    Toast.makeText(Close_Friends.this,ToastMsg,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Amigos_Cercanos.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }
             catch (Exception e)

@@ -37,8 +37,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".History" />
-        <activity android:name=".Emergency_dial" />
+        <activity android:name=".Historial" />
+        <activity android:name=".Llamada_emergencia" />
         <activity android:name=".UbicacionCasa" />
 
         <meta-data
@@ -48,7 +48,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".Close_Friends" />
+        <activity android:name=".Amigos_Cercanos" />
         <!--
          <activity android:name=".Close_Friends"/>
 
@@ -56,10 +56,10 @@
             android:value="AIzaSyC9aWeewLGw-cCfL18medshrGiKQOMNtys"/>
         <activity android:name=".Close_Friends"></activity>
         -->
-        <activity android:name=".Description" />
-        <activity android:name=".Settings" />
-        <activity android:name=".About" />
-        <activity android:name=".Dashboard" />
+        <activity android:name=".Descripcion" />
+        <activity android:name=".Ajustes" />
+        <activity android:name=".SobreNosotros" />
+        <activity android:name=".Panel_Alerta" />
         <activity android:name=".MainActivity"/>
         <activity
             android:name=".Splash"

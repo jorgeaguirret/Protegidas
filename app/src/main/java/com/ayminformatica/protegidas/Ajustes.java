@@ -5,24 +5,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
 
 
-import com.ayminformatica.protegidas.R;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
@@ -32,11 +22,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Switch;
-import android.widget.Toast;
 
-public class Settings extends AppCompatActivity {
+public class Ajustes extends AppCompatActivity {
 
     Button btPicker,btHistory;
     TextView textview;
@@ -86,7 +74,7 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //ringtone = RingtoneManager.getRingtone(getApplicationContext(), RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE));
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_ajustes);
 
 
 
@@ -131,7 +119,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                 try {
-                    startActivityForResult(builder.build(Settings.this),
+                    startActivityForResult(builder.build(Ajustes.this),
                             PLACE_PICKER_REQUEST);
                 } catch (GooglePlayServicesRepairableException e) {
                     e.printStackTrace();
@@ -145,7 +133,7 @@ public class Settings extends AppCompatActivity {
         btHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),History.class);
+                Intent i = new Intent(getApplicationContext(), Historial.class);
                 startActivity(i);
             }
         });
@@ -163,13 +151,13 @@ public class Settings extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.dashboard:
                         startActivity(new Intent(getApplicationContext(),
-                                Dashboard.class));
+                                Panel_Alerta.class));
                         overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.about:
                         startActivity(new Intent(getApplicationContext(),
-                                About.class));
+                                SobreNosotros.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -178,13 +166,13 @@ public class Settings extends AppCompatActivity {
 
                     case R.id.description:
                         startActivity(new Intent(getApplicationContext(),
-                                Description.class));
+                                Descripcion.class));
                         overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.close_friends:
                         startActivity(new Intent(getApplicationContext(),
-                                Close_Friends.class));
+                                Amigos_Cercanos.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }

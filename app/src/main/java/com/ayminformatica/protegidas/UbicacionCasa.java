@@ -78,7 +78,7 @@ public class UbicacionCasa extends AppCompatActivity {
                 .setMessage(mensaje)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
+                        Intent myIntent = new Intent(getApplicationContext(), Panel_Alerta.class);
                         startActivityForResult(myIntent, 0);
                     }
                 })
@@ -90,7 +90,7 @@ public class UbicacionCasa extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
+        Intent myIntent = new Intent(getApplicationContext(), Panel_Alerta.class);
         startActivityForResult(myIntent, 0);
     }
 }

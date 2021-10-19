@@ -10,15 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.ayminformatica.protegidas.R;
-
-public class Emergency_dial extends AppCompatActivity {
+public class Llamada_emergencia extends AppCompatActivity {
     Button llamarCarabineros, llamarAmbulancia, llamarBomberos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emergency_dial);
+        setContentView(R.layout.activity_llamada_emergencia);
 
 
 
@@ -31,7 +29,7 @@ public class Emergency_dial extends AppCompatActivity {
         llamarCarabineros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Emergency_dial.this, "Calling Police", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Llamada_emergencia.this, "Calling Police", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:133"));                    //---Carabineros
                 startActivity(intent);
@@ -43,7 +41,7 @@ public class Emergency_dial extends AppCompatActivity {
         llamarAmbulancia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Emergency_dial.this, "Calling Ambulance", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Llamada_emergencia.this, "Calling Ambulance", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:131"));                    //---Ambulancia
                 startActivity(intent);
@@ -55,7 +53,7 @@ public class Emergency_dial extends AppCompatActivity {
         llamarBomberos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Emergency_dial.this, "Calling Fire Brigade", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Llamada_emergencia.this, "Calling Fire Brigade", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:132"));                    //---Bomberos
                 startActivity(intent);

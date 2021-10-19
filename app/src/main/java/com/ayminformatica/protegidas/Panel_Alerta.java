@@ -23,7 +23,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dashboard extends AppCompatActivity {
+public class Panel_Alerta extends AppCompatActivity {
     TextView tv;
     Button alerta;
     static int nivel_bateria =0;
@@ -34,7 +34,7 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_panel_alerta);
 
 
 
@@ -114,8 +114,8 @@ public class Dashboard extends AppCompatActivity {
                 final ArrayList<String> fono= new ArrayList<>();
                 final ArrayList<String> nombre= new ArrayList<>();
 
-                DataBaseHelper dataBaseHelper = new DataBaseHelper(Dashboard.this);
-                List<ContactModel> everyone = dataBaseHelper.getEveryone();
+                DataBaseHelper dataBaseHelper = new DataBaseHelper(Panel_Alerta.this);
+                List<ModeloContacto> everyone = dataBaseHelper.getEveryone();
                 System.out.println(everyone.toString());
                 if(!everyone.isEmpty()) {
                     //-----Solved the problem of app crashing with less than 3 contacts saved
@@ -153,10 +153,10 @@ public class Dashboard extends AppCompatActivity {
                 {
                     msg_temp="Sent from PERSONAL SAFETY ALERTZ." + tipo_mensaje+" (Manual Alert).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
-                AlertModel alertModel = new AlertModel(-1, nivel_bateria,ubicacion,msg_temp,nombre.get(0),nombre.get(1),nombre.get(2),fono.get(0),fono.get(1),fono.get(2));
+                ModeloAlerta alertModel = new ModeloAlerta(-1, nivel_bateria,ubicacion,msg_temp,nombre.get(0),nombre.get(1),nombre.get(2),fono.get(0),fono.get(1),fono.get(2));
                 boolean success = dataBaseHelper.addOneAlert(alertModel);
                 String successMsg= success==true?"Agregado a la Base de Datos":"Ocurrio un error";
-                Toast.makeText(Dashboard.this,successMsg,Toast.LENGTH_LONG).show();
+                Toast.makeText(Panel_Alerta.this,successMsg,Toast.LENGTH_LONG).show();
                 SMS.sendSMS(fono,msg_temp);
                 showMessageOKCancel("El mensaje sent successfully to your trusted contacts. Stay safe \uD83D\uDE00");
             }
@@ -182,25 +182,25 @@ public class Dashboard extends AppCompatActivity {
 
                     case R.id.about:
                         startActivity(new Intent(getApplicationContext(),
-                                About.class));
+                                SobreNosotros.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.settings:
                         startActivity(new Intent(getApplicationContext(),
-                                Settings.class));
+                                Ajustes.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.description:
                         startActivity(new Intent(getApplicationContext(),
-                                Description.class));
+                                Descripcion.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.close_friends:
                         startActivity(new Intent(getApplicationContext(),
-                                Close_Friends.class));
+                                Amigos_Cercanos.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -262,7 +262,7 @@ public class Dashboard extends AppCompatActivity {
     //Mensaje de pantalla cuando se envia la alerta
 
     private void showMessageOKCancel(String Mensaje) {
-        new android.app.AlertDialog.Builder(Dashboard.this)
+        new android.app.AlertDialog.Builder(Panel_Alerta.this)
                 .setMessage(Mensaje)
                 .setPositiveButton("CERRAR",null)
                 .create()
@@ -272,7 +272,7 @@ public class Dashboard extends AppCompatActivity {
 
     public void openSpeedDial()
     {
-        Intent intent = new Intent(this, Emergency_dial.class);
+        Intent intent = new Intent(this, Llamada_emergencia.class);
         startActivity(intent);
     }
 }

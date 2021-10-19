@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             onBackPressed();
         }
         else {
-            Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
+            Intent myIntent = new Intent(getApplicationContext(), Panel_Alerta.class);
             startActivityForResult(myIntent, 0);
         }
         tv = findViewById(R.id.loc);
@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
+        Intent myIntent = new Intent(getApplicationContext(), Panel_Alerta.class);
         startActivityForResult(myIntent, 0);
     }
 }
