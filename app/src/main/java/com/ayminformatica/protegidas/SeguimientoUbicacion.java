@@ -24,16 +24,16 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
     private final Context mContext;
 
 
-    boolean checkGPS = false;
+    boolean comprobarGPS = false;
 
 
-    boolean checkNetwork = false;
+    boolean comprobarRed = false;
 
-    boolean canGetLocation = false;
+    boolean obtenerUbicacion = false;
 
-    Location loc;
-    double latitude;
-    double longitude;
+    Location ubicacion;
+    double latitud;
+    double longitud;
 
 
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
@@ -47,9 +47,9 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
         getLocation();
     }
 
-    public SeguimientoUbicacion(BackgroundService mContext) {
-        this.mContext = mContext;
-        getLocation();
+    public SeguimientoUbicacion(BackgroundService backgroundService) {
+
+        mContext = null;
     }
 
     private Location getLocation() {
@@ -59,20 +59,20 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
                     .getSystemService(LOCATION_SERVICE);
 
             // get GPS status
-            checkGPS = locationManager
+            comprobarGPS = locationManager
                     .isProviderEnabled(LocationManager.GPS_PROVIDER);
 
             // get network provider status
-            checkNetwork = locationManager
+            comprobarRed = locationManager
                     .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
-            if (!checkGPS && !checkNetwork) {
+            if (!comprobarGPS && !comprobarRed) {
                 Toast.makeText(mContext, "No Service Provider is available", Toast.LENGTH_SHORT).show();
             } else {
-                this.canGetLocation = true;
+                this.obtenerUbicacion = true;
 
                 // if GPS Enabled get lat/long using GPS Services
-                if (checkGPS) {
+                if (comprobarGPS) {
 
                     if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                         // TODO: Consider calling
@@ -88,11 +88,11 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
                             MIN_TIME_BW_UPDATES,
                             MIN_DISTANCE_CHANGE_FOR_UPDATES, (LocationListener) this);
                     if (locationManager != null) {
-                        loc = locationManager
+                        ubicacion = locationManager
                                 .getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                        if (loc != null) {
-                            latitude = loc.getLatitude();
-                            longitude = loc.getLongitude();
+                        if (ubicacion != null) {
+                            latitud = ubicacion.getLatitude();
+                            longitud = ubicacion.getLongitude();
                         }
                     }
 
@@ -100,7 +100,7 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
                 }
 
 
-                if (checkNetwork) {
+                if (comprobarRed) {
 
 
                     if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -118,14 +118,14 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
                             MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
 
                     if (locationManager != null) {
-                        loc = locationManager
+                        ubicacion = locationManager
                                 .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
                     }
 
-                    if (loc != null) {
-                        latitude = loc.getLatitude();
-                        longitude = loc.getLongitude();
+                    if (ubicacion != null) {
+                        latitud = ubicacion.getLatitude();
+                        longitud = ubicacion.getLongitude();
                     }
                 }
 
@@ -136,37 +136,37 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
             e.printStackTrace();
         }
 
-        return loc;
+        return ubicacion;
     }
 
-    public double getLongitude() {
-        if (loc != null) {
-            longitude = loc.getLongitude();
+    public double getLongitud() {
+        if (ubicacion != null) {
+            longitud = ubicacion.getLongitude();
         }
-        return longitude;
+        return longitud;
     }
 
-    public double getLatitude() {
-        if (loc != null) {
-            latitude = loc.getLatitude();
+    public double getLatitud() {
+        if (ubicacion != null) {
+            latitud = ubicacion.getLatitude();
         }
-        return latitude;
+        return latitud;
     }
 
     public boolean canGetLocation() {
-        return this.canGetLocation;
+        return this.obtenerUbicacion;
     }
 
     public void showSettingsAlert() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 
 
-        alertDialog.setTitle("su GPS no esta Activado!");
+        alertDialog.setTitle("GPS is not Enabled!");
 
-        alertDialog.setMessage("¿Quieres activar el GPS?");
+        alertDialog.setMessage("Do you want to turn on GPS?");
 
 
-        alertDialog.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 mContext.startActivity(intent);

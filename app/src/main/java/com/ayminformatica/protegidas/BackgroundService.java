@@ -16,10 +16,10 @@ import java.util.List;
 public class BackgroundService extends Service {
 
 
-    static int battery_level=0;
+    static int nivel_bateria =0;
     static int automatic_alert_battery=0;
-    double currLat,currLong;
-    SeguimientoUbicacion locationTrack,lt;
+    double actualLat, actualLong;
+    SeguimientoUbicacion seguimientoUbicacion, ubicacion;
 
 
     @Nullable
@@ -32,25 +32,25 @@ public class BackgroundService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         System.out.println("Entered the background service...");
         batterylevel();
-        System.out.println("Battery level hai "+BackgroundService.battery_level);
+        System.out.println("Battery level hai "+BackgroundService.nivel_bateria);
 
-        lt=new SeguimientoUbicacion(BackgroundService.this);
-        locationTrack = new SeguimientoUbicacion(BackgroundService.this);
-
-
-        if (locationTrack.canGetLocation()) {
+        ubicacion =new SeguimientoUbicacion(BackgroundService.this);
+        seguimientoUbicacion = new SeguimientoUbicacion(BackgroundService.this);
 
 
-            double longitude = locationTrack.getLongitude();
-            double latitude = locationTrack.getLatitude();
-            this.currLat=latitude;
-            this.currLong=longitude;
+        if (seguimientoUbicacion.canGetLocation()) {
+
+
+            double longitude = seguimientoUbicacion.getLongitud();
+            double latitude = seguimientoUbicacion.getLatitud();
+            this.actualLat =latitude;
+            this.actualLong =longitude;
             System.out.println("lat:"+longitude+" - "+latitude);
 
             Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
         } else {
 
-            locationTrack.showSettingsAlert();
+            seguimientoUbicacion.showSettingsAlert();
         }
 
 //        currLat=MainActivity.currLat;
@@ -62,7 +62,7 @@ public class BackgroundService extends Service {
 //        DataBaseHelper dataBaseHelper = new DataBaseHelper(BackgroundService.this);
 //        automatic_alert_battery = dataBaseHelper.getAutomatic_alert_battery();
 
-        if(battery_level<=62) {
+        if(nivel_bateria <=62) {
             automatic_alert();
             Toast.makeText(BackgroundService.this,"background service",Toast.LENGTH_SHORT).show();
 
@@ -80,16 +80,16 @@ public class BackgroundService extends Service {
         List<ContactModel> everyone = dataBaseHelper.getEveryone();
         System.out.println(everyone.toString());
         if(!everyone.isEmpty()) {
-            phone.add(everyone.get(0).getPhone());
-            name.add(everyone.get(0).getName());
-            phone.add(everyone.get(1).getPhone());
-            name.add(everyone.get(1).getName());
-            phone.add(everyone.get(2).getPhone());
-            name.add(everyone.get(2).getName());
+            phone.add(everyone.get(0).getFono());
+            name.add(everyone.get(0).getNombre());
+            phone.add(everyone.get(1).getFono());
+            name.add(everyone.get(1).getNombre());
+            phone.add(everyone.get(2).getFono());
+            name.add(everyone.get(2).getNombre());
         }
-        String loc = "https://maps.google.com/?q="+currLat+","+currLong;
+        String loc = "https://maps.google.com/?q="+ actualLat +","+ actualLong;
 
-        String msg_temp="Sent from SAFETY BATTERY ALERT.  My battery is about to die (Automatic alert).\n Battery: "+battery_level+"%.\n Current location: "+loc;
+        String msg_temp="Sent from SAFETY BATTERY ALERT.  My battery is about to die (Automatic alert).\n Battery: "+ nivel_bateria +"%.\n Current location: "+loc;
 //        AlertModel alertModel = new AlertModel(-1,battery_level,loc,msg_temp,name.get(0),name.get(1),name.get(2),phone.get(0),phone.get(1),phone.get(2));
 //        boolean success = dataBaseHelper.addOneAlert(alertModel);
 //        String successMsg= success==true?"Added to database":"Error occurred";
@@ -114,7 +114,7 @@ public class BackgroundService extends Service {
                 if(raw_level>=0 && scale>0){
                     level = (raw_level*100)/scale;
                 }
-                battery_level = level;
+                nivel_bateria = level;
                 //battery.setText(String.valueOf(level) + "%");
             }
         };

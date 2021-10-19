@@ -43,7 +43,7 @@
             android:padding="10dp">
 
             <ListView
-                android:id="@+id/lv_custList"
+                android:id="@+id/lv_listaAlertas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 

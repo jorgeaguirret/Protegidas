@@ -45,44 +45,44 @@ public class UbicacionCasa extends AppCompatActivity {
                 } catch (GooglePlayServicesNotAvailableException e) {
                     e.printStackTrace();
                 }
-                System.out.println("Location hai"+MainActivity.currLat);
+                System.out.println("La ubicacion es: "+MainActivity.actualLat);
             }
         });
 
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode==PLACE_PICKER_REQUEST){
-            if(resultCode==RESULT_OK){
+    protected void onActivityResult(int codigoSolicitud, int codigoResultado, @Nullable Intent data) {
+        if(codigoSolicitud==PLACE_PICKER_REQUEST){
+            if(codigoResultado==RESULT_OK){
                 Place place = PlacePicker.getPlace(data, this);
 //                StringBuilder stringBuilder = new StringBuilder();
-                double latitude = (place.getLatLng().latitude);
-                double longitude = (place.getLatLng().longitude);
-                this.homeLat=latitude;
-                this.homeLong=longitude;
+                double latitud = (place.getLatLng().latitude);
+                double longitud = (place.getLatLng().longitude);
+                this.homeLat=latitud;
+                this.homeLong=longitud;
 //                stringBuilder.append("LATITUDE: ");
 //                stringBuilder.append(latitude);
 //                stringBuilder.append("\nLONGITUDE: ");
 //                stringBuilder.append(longitude);
-                textview.setText("LATITUD ES "+latitude+". LONGITUD ES "+longitude);
-                showMessageOKCancel("ESTAS SEGURO?");
+                textview.setText("LATITUD ES "+latitud+". LONGITUD ES "+longitud);
+                showMessageOKCancel("¿ESTA SEGURO?");
 
 
             }
         }
 
     }
-    private void showMessageOKCancel(String message) {
+    private void showMessageOKCancel(String mensaje) {
         new android.app.AlertDialog.Builder(UbicacionCasa.this)
-                .setMessage(message)
+                .setMessage(mensaje)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
                         startActivityForResult(myIntent, 0);
                     }
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton("Cancelar", null)
                 .create()
                 .show();
     }

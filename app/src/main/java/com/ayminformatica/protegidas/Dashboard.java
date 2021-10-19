@@ -25,10 +25,10 @@ import java.util.List;
 
 public class Dashboard extends AppCompatActivity {
     TextView tv;
-    Button alert;
-    static int battery_level=0;
+    Button alerta;
+    static int nivel_bateria =0;
     private TextView battery;
-    double currLat,currLong;
+    double actualLat, actualLong;
 
 
     @Override
@@ -42,51 +42,51 @@ public class Dashboard extends AppCompatActivity {
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         //battery = (TextView)this.findViewById(R.id.text1);
-        batterylevel();
+        nivel_bateria();
 
 
 
         //-------------------SPEED MESSAGES--------------------
-        Button button1 = findViewById(R.id.emergency);
-        Button button2 = findViewById(R.id.help);
-        Button button3 = findViewById(R.id.come_here_asap);
-        Button button4 = findViewById(R.id.come_home_late);
-        ImageButton button5 = findViewById(R.id.emergency_dial_button);
-        final EditText message = findViewById(R.id.editText2);
+        Button boton1 = findViewById(R.id.emergencia);
+        Button boton2 = findViewById(R.id.ayudame);
+        Button boton3 = findViewById(R.id.ven_aqui_ahora);
+        Button boton4 = findViewById(R.id.llama_a_la_policia);
+        ImageButton boton5 = findViewById(R.id.llamada_de_emergencia);
+        final EditText mensaje = findViewById(R.id.editText2);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                message.setText("Emergencia!");
+                mensaje.setText("Emergencia!!!");
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
+        boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                message.setText("Ayudame!");
+                mensaje.setText("Ayudame!!!");
             }
         });
 
-        button3.setOnClickListener(new View.OnClickListener() {
+        boton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                message.setText(" Ven a mi casa rapido!");
+                mensaje.setText("Ven aqui ahora!!!");
             }
         });
 
 
-        button4.setOnClickListener(new View.OnClickListener() {
+        boton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                message.setText(" Llama a la policia");
+                mensaje.setText("Llama a la policia");
             }
         });
 
 
         //------------------speed dial--------------------
 
-        button5.setOnClickListener(new View.OnClickListener() {
+        boton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSpeedDial();
@@ -98,21 +98,21 @@ public class Dashboard extends AppCompatActivity {
 
 
         tv = findViewById(R.id.loc);
-        alert = findViewById(R.id.send_alert);
-        currLat=MainActivity.currLat;
-        currLong=MainActivity.currLong;
+        alerta = findViewById(R.id.send_alert);
+        actualLat =MainActivity.actualLat;
+        actualLong =MainActivity.actualLong;
         double homeLat= UbicacionCasa.homeLat;
         double homeLong= UbicacionCasa.homeLong;
-        String diff = String.format("%.2f",distance(currLat,homeLat,currLong,homeLong));
-       // tv.setText("Distance between home and your current location is "+diff+" km");
+        String diff = String.format("%.2f", distancia(actualLat,homeLat, actualLong,homeLong));
+        // tv.setText("Distance between home and your current location is "+diff+" km");
 
 
 
 
-        alert.setOnClickListener(new View.OnClickListener() {
+        alerta.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                final ArrayList<String> phone= new ArrayList<>();
-                final ArrayList<String> name= new ArrayList<>();
+                final ArrayList<String> fono= new ArrayList<>();
+                final ArrayList<String> nombre= new ArrayList<>();
 
                 DataBaseHelper dataBaseHelper = new DataBaseHelper(Dashboard.this);
                 List<ContactModel> everyone = dataBaseHelper.getEveryone();
@@ -122,12 +122,12 @@ public class Dashboard extends AppCompatActivity {
                     try {
                         for(int i=0; i<3; i++) {
                             if(everyone.size()>i) {
-                                phone.add(everyone.get(i).getPhone());
-                                name.add(everyone.get(i).getName());
+                                fono.add(everyone.get(i).getFono());
+                                nombre.add(everyone.get(i).getNombre());
                             }
                             else{
-                                phone.add(null);
-                                name.add(null);
+                                fono.add(null);
+                                nombre.add(null);
                             }
                         }
 //                        phone.add(everyone.get(1).getPhone());
@@ -142,23 +142,23 @@ public class Dashboard extends AppCompatActivity {
                 }
 
                 String msg_temp="";
-                String typed_msg = message.getText().toString();
-                String loc = "https://maps.google.com/?q="+currLat+","+currLong;
-                System.out.println("Typed msg: "+typed_msg);
-                if(battery_level<=10)
+                String tipo_mensaje = mensaje.getText().toString();
+                String ubicacion = "https://maps.google.com/?q="+ actualLat +","+ actualLong;
+                System.out.println("Tipo de mensaje: "+tipo_mensaje);
+                if(nivel_bateria <=10)
                 {
-                    msg_temp="Enviado desde la App 'Protegidas'." + typed_msg+" Mi bateria esta apundo de agotarse (Alerta Automatica).\nBattery: "+battery_level+"%.\nCurrent location: "+loc;
+                    msg_temp="Sent from PERSONAL SAFETY ALERTZ." + tipo_mensaje+" My battery is about to die (Automatic alert).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
                 else
                 {
-                    msg_temp="Enviado desde la App 'Protegidas' ." + typed_msg+" (Alerta Manual). \nBateria: "+battery_level+"%.\nMi Ubicacion: "+loc;
+                    msg_temp="Sent from PERSONAL SAFETY ALERTZ." + tipo_mensaje+" (Manual Alert).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
-                AlertModel alertModel = new AlertModel(-1,battery_level,loc,msg_temp,name.get(0),name.get(1),name.get(2),phone.get(0),phone.get(1),phone.get(2));
+                AlertModel alertModel = new AlertModel(-1, nivel_bateria,ubicacion,msg_temp,nombre.get(0),nombre.get(1),nombre.get(2),fono.get(0),fono.get(1),fono.get(2));
                 boolean success = dataBaseHelper.addOneAlert(alertModel);
-                String successMsg= success==true?"Agregado a la base de datos":"Un error a ocurrido";
-                Toast.makeText(Dashboard.this,successMsg,Toast.LENGTH_SHORT).show();
-                SMS.sendSMS(phone,msg_temp);
-                showMessageOKCancel("Mensaje enviado correctamente a sus contactos. Mantente Segura \uD83D\uDE00");
+                String successMsg= success==true?"Agregado a la Base de Datos":"Ocurrio un error";
+                Toast.makeText(Dashboard.this,successMsg,Toast.LENGTH_LONG).show();
+                SMS.sendSMS(fono,msg_temp);
+                showMessageOKCancel("El mensaje sent successfully to your trusted contacts. Stay safe \uD83D\uDE00");
             }
         });
 
@@ -209,28 +209,28 @@ public class Dashboard extends AppCompatActivity {
         });
     }
 
-    private void batterylevel(){
+    private void nivel_bateria(){
         BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 context.unregisterReceiver(this);
-                int raw_level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL,-1);
+                int raw_nivel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL,-1);
                 int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE,-1);
-                int level =-1;
-                if(raw_level>=0 && scale>0){
-                    level = (raw_level*100)/scale;
+                int nivel =-1;
+                if(raw_nivel>=0 && scale>0){
+                    nivel = (raw_nivel*100)/scale;
                 }
-                battery_level = level;
+                nivel_bateria = nivel;
                 //battery.setText(String.valueOf(level) + "%");
             }
         };
-        IntentFilter batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        registerReceiver(mBatInfoReceiver, batteryLevelFilter);
+        IntentFilter filtroNivelBateria = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(mBatInfoReceiver, filtroNivelBateria);
     }
 
-    public static double distance(double lat1,
-                                  double lat2, double lon1,
-                                  double lon2)
+    public static double distancia(double lat1,
+                                   double lat2, double lon1,
+                                   double lon2)
     {
 
         // The math module contains a function
@@ -258,10 +258,13 @@ public class Dashboard extends AppCompatActivity {
         return(c * r);
     }
 
-    private void showMessageOKCancel(String message) {
+
+    //Mensaje de pantalla cuando se envia la alerta
+
+    private void showMessageOKCancel(String Mensaje) {
         new android.app.AlertDialog.Builder(Dashboard.this)
-                .setMessage(message)
-                .setPositiveButton("OK",null)
+                .setMessage(Mensaje)
+                .setPositiveButton("CERRAR",null)
                 .create()
                 .show();
     }

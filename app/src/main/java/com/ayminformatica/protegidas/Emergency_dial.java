@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.ayminformatica.protegidas.R;
 
 public class Emergency_dial extends AppCompatActivity {
-    Button callPolice, callAmbulance, callFireBrigade, callFonoMujer;
+    Button llamarCarabineros, llamarAmbulancia, llamarBomberos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,49 +27,37 @@ public class Emergency_dial extends AppCompatActivity {
 
 
         //---------Emergency call to police
-        callPolice = (Button) findViewById(R.id.call_police);
-        callPolice.setOnClickListener(new View.OnClickListener() {
+        llamarCarabineros = (Button) findViewById(R.id.llamar_carabineros);
+        llamarCarabineros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Emergency_dial.this, "Llamando a Carabineros", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Emergency_dial.this, "Calling Police", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:133"));                    //---Rehan's Number
+                intent.setData(Uri.parse("tel:133"));                    //---Carabineros
                 startActivity(intent);
             }
         });
 
         //---------Emergency call to ambulance
-        callAmbulance = (Button) findViewById(R.id.call_ambulance);
-        callAmbulance.setOnClickListener(new View.OnClickListener() {
+        llamarAmbulancia = (Button) findViewById(R.id.llamar_ambulancia);
+        llamarAmbulancia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Emergency_dial.this, "LLamando a la ambulancia", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Emergency_dial.this, "Calling Ambulance", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:131"));                    //---Shubham's Number
+                intent.setData(Uri.parse("tel:131"));                    //---Ambulancia
                 startActivity(intent);
             }
         });
 
         //---------Emergency call to fire brigade
-        callFireBrigade = (Button) findViewById(R.id.call_fire_brigade);
-        callFireBrigade.setOnClickListener(new View.OnClickListener() {
+        llamarBomberos = (Button) findViewById(R.id.llamar_bomberos);
+        llamarBomberos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Emergency_dial.this, "Llamando a los Bomberos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Emergency_dial.this, "Calling Fire Brigade", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:132"));                    //---Nikhil's Number
-                startActivity(intent);
-            }
-        });
-
-        //---------Emergency call to fire brigade
-        callFonoMujer = (Button) findViewById(R.id.call_fono_mujer);
-        callFonoMujer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Emergency_dial.this, "Llamando al Fono Mujer", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:1455"));                    //---Nikhil's Number
+                intent.setData(Uri.parse("tel:132"));                    //---Bomberos
                 startActivity(intent);
             }
         });

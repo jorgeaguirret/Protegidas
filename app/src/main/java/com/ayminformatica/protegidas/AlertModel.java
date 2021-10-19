@@ -2,54 +2,55 @@ package com.ayminformatica.protegidas;
 
 public class AlertModel {
     private int id;
-    private int battery;
-    private String location;
-    private String alertMsg,createdAt;
-    private String contactName1,contactName2,contactName3;
-    private String contactPhone1,contactPhone2,contactPhone3;
+    private int bateria;
+    private String ubicacion;
+    private String mensajeAlerta, horaCreada;
+    private String nombreContacto1, nombreContacto2, nombreContacto3;
+    private String fonoContacto1, fonoContacto2, fonoContacto3;
 
-    public AlertModel(int id, int battery, String location, String alertMsg, String contactName1, String contactName2, String contactName3, String contactPhone1, String contactPhone2, String contactPhone3) {
+    public AlertModel(int id, int bateria, String ubicacion, String mensajeAlerta, String nombreContacto1, String nombreContacto2, String nombreContacto3, String fonoContacto1, String fonoContacto2, String fonoContacto3) {
         this.id = id;
-        this.battery = battery;
-        this.location = location;
-        this.alertMsg = alertMsg;
-        this.contactName1 = contactName1;
-        this.contactName2 = contactName2;
-        this.contactName3 = contactName3;
-        this.contactPhone1 = contactPhone1;
-        this.contactPhone2 = contactPhone2;
-        this.contactPhone3 = contactPhone3;
+        this.bateria = bateria;
+        this.ubicacion = ubicacion;
+        this.mensajeAlerta = mensajeAlerta;
+        this.nombreContacto1 = nombreContacto1;
+        this.nombreContacto2 = nombreContacto2;
+        this.nombreContacto3 = nombreContacto3;
+        this.fonoContacto1 = fonoContacto1;
+        this.fonoContacto2 = fonoContacto2;
+        this.fonoContacto3 = fonoContacto3;
     }
 
-    public AlertModel(int id, int battery, String location, String alertMsg,String createdAt, String contactName1, String contactName2, String contactName3, String contactPhone1, String contactPhone2, String contactPhone3) {
+    public AlertModel(int id, int bateria, String ubicacion, String mensajeAlerta,String horaCreada, String nombreContacto1, String nombreContacto2, String nombreContacto3, String fonoContacto1, String fonoContacto2, String fonoContacto3) {
         this.id = id;
-        this.battery = battery;
-        this.location = location;
-        this.alertMsg = alertMsg;
-        this.createdAt = createdAt;
-        this.contactName1 = contactName1;
-        this.contactName2 = contactName2;
-        this.contactName3 = contactName3;
-        this.contactPhone1 = contactPhone1;
-        this.contactPhone2 = contactPhone2;
-        this.contactPhone3 = contactPhone3;
+        this.bateria = bateria;
+        this.ubicacion = ubicacion;
+        this.mensajeAlerta = mensajeAlerta;
+        this.horaCreada = horaCreada;
+        this.nombreContacto1 = nombreContacto1;
+        this.nombreContacto2 = nombreContacto2;
+        this.nombreContacto3 = nombreContacto3;
+        this.fonoContacto1 = fonoContacto1;
+        this.fonoContacto2 = fonoContacto2;
+        this.fonoContacto3 = fonoContacto3;
     }
 
     @Override
     public String toString() {
-        return "AlertModel{" +
-                "\nid=" + id +
-                ", \nbattery=" + battery +
-                ", \nlocation='" + location + '\'' +
-                ", \nalertMsg='" + alertMsg + '\'' +
-                ", \ncreatedAt='" + createdAt + '\'' +
-                ", \ncontactName1='" + contactName1 + '\'' +
-                ", \ncontactPhone1='" + contactPhone1 + '\'' +
-                ", \ncontactName2='" + contactName2 + '\'' +
-                ", \ncontactPhone2='" + contactPhone2 + '\'' +
-                ", \ncontactName3='" + contactName3 + '\'' +
-                ", \ncontactPhone3='" + contactPhone3 + '\'' +
-                '}';
+        return "Alerta Enviada" +
+                "\nID Alerta:  " + id +
+                ", \nNivel de batería:  " + bateria + '%' +
+                ", \nUbicación:  '" + ubicacion + '\'' +
+                ", \nMensaje de Alerta:  '" + mensajeAlerta + '\'' +
+                ", \nEnviado el:  '" + horaCreada + '\'' +
+                ", \nNombre de contacto N°1:  '" + nombreContacto1 + '\'' +
+                ", \nTeléfono de contacto N°1:  '" + fonoContacto1 + '\'' +
+                ", \nNombre de contacto N°2:  '" + nombreContacto2 + '\'' +
+                ", \nTeléfono de contacto N°2:  '" + fonoContacto2 + '\'' +
+                ", \nNombre de contacto N°3:  '" + nombreContacto3 + '\'' +
+                ", \nTeléfono de contacto N°3:  '" + fonoContacto3 + '\'' +
+                ", \n   ";
+
     }
 
     public int getId() {
@@ -60,75 +61,75 @@ public class AlertModel {
         this.id = id;
     }
 
-    public int getBattery() {
-        return battery;
+    public int getBateria() {
+        return bateria;
     }
 
-    public void setBattery(int battery) {
-        this.battery = battery;
+    public void setBateria(int bateria) {
+        this.bateria = bateria;
     }
 
-    public String getLocation() {
-        return location;
+    public String getUbicacion() {
+        return ubicacion;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 
-    public String getAlertMsg() {
-        return alertMsg;
+    public String getMensajeAlerta() {
+        return mensajeAlerta;
     }
 
-    public void setAlertMsg(String alertMsg) {
-        this.alertMsg = alertMsg;
+    public void setMensajeAlerta(String mensajeAlerta) {
+        this.mensajeAlerta = mensajeAlerta;
     }
 
-    public String getContactName1() {
-        return contactName1;
+    public String getNombreContacto1() {
+        return nombreContacto1;
     }
 
-    public void setContactName1(String contactName1) {
-        this.contactName1 = contactName1;
+    public void setNombreContacto1(String nombreContacto1) {
+        this.nombreContacto1 = nombreContacto1;
     }
 
-    public String getContactName2() {
-        return contactName2;
+    public String getNombreContacto2() {
+        return nombreContacto2;
     }
 
-    public void setContactName2(String contactName2) {
-        this.contactName2 = contactName2;
+    public void setNombreContacto2(String nombreContacto2) {
+        this.nombreContacto2 = nombreContacto2;
     }
 
-    public String getContactName3() {
-        return contactName3;
+    public String getNombreContacto3() {
+        return nombreContacto3;
     }
 
-    public void setContactName3(String contactName3) {
-        this.contactName3 = contactName3;
+    public void setNombreContacto3(String nombreContacto3) {
+        this.nombreContacto3 = nombreContacto3;
     }
 
-    public String getContactPhone1() {
-        return contactPhone1;
+    public String getFonoContacto1() {
+        return fonoContacto1;
     }
 
-    public void setContactPhone1(String contactPhone1) {
-        this.contactPhone1 = contactPhone1;
+    public void setFonoContacto1(String fonoContacto1) {
+        this.fonoContacto1 = fonoContacto1;
     }
 
-    public String getContactPhone2() {
-        return contactPhone2;
+    public String getFonoContacto2() {
+        return fonoContacto2;
     }
 
-    public void setContactPhone2(String contactPhone2) {
-        this.contactPhone2 = contactPhone2;
+    public void setFonoContacto2(String fonoContacto2) {
+        this.fonoContacto2 = fonoContacto2;
     }
 
-    public String getContactPhone3() {
-        return contactPhone3;
+    public String getFonoContacto3() {
+        return fonoContacto3;
     }
 
-    public void setContactPhone3(String contactPhone3) {
-        this.contactPhone3 = contactPhone3;
+    public void setFonoContacto3(String fonoContacto3) {
+        this.fonoContacto3 = fonoContacto3;
     }
 }

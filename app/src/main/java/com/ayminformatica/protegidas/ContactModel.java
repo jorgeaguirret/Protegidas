@@ -2,13 +2,13 @@ package com.ayminformatica.protegidas;
 
 public class ContactModel {
     private int id;
-    private String name;
-    private String phone;
+    private String nombre;
+    private String fono;
 
-    public ContactModel(int id, String name, String phone) {
+    public ContactModel(int id, String nombre, String fono) {
         this.id = id;
-        this.name = name;
-        this.phone = phone;
+        this.nombre = nombre;
+        this.fono = fono;
     }
 
     public int getId() {
@@ -19,19 +19,19 @@ public class ContactModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getFono() {
+        return fono;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setFono(String fono) {
+        this.fono = fono;
     }
 }

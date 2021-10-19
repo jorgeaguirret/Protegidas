@@ -7,18 +7,18 @@ import java.util.ArrayList;
 
 public class SMS {
 
-    public static void sendSMS(ArrayList<String> a,String msg) {
-        String phone_Num = null;
+    public static void sendSMS(ArrayList<String> a,String mensaje) {
+        String num_Fono = null;
         for (String num : a) {
             if(num != null)
-                phone_Num = num;
-            String send_msg = msg;
-            System.out.println("Numero de telefono es: "+phone_Num);
+                num_Fono = num;
+            String enviar_mensaje = mensaje;
+            System.out.println("Phone number is "+num_Fono);
             try {
                 SmsManager sms = SmsManager.getDefault(); // using android SmsManager
-                sms.sendTextMessage(phone_Num, null, send_msg, null, null); // adding number and text
+                sms.sendTextMessage(num_Fono, null, enviar_mensaje, null, null); // adding number and text
             } catch (Exception e) {
-                Toast.makeText(null, "Sms no enviado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(null, "Sms not Send", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         }

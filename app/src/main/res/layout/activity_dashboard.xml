@@ -89,7 +89,7 @@
             android:textIsSelectable="true"
             android:textSize="20sp" />            />
         <Button
-            android:id="@+id/emergency"
+            android:id="@+id/emergencia"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
@@ -105,7 +105,7 @@
 
 
         <Button
-            android:id="@+id/come_home_late"
+            android:id="@+id/llama_a_la_policia"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
@@ -121,7 +121,7 @@
             tools:visibility="visible"
             android:foreground="?attr/selectableItemBackgroundBorderless" />
         <Button
-            android:id="@+id/come_here_asap"
+            android:id="@+id/ven_aqui_ahora"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
@@ -138,7 +138,7 @@
 
 
         <Button
-            android:id="@+id/help"
+            android:id="@+id/ayudame"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
@@ -159,7 +159,7 @@
     </androidx.cardview.widget.CardView>
 
     <ImageButton
-        android:id="@+id/emergency_dial_button"
+        android:id="@+id/llamada_de_emergencia"
         android:layout_width="59dp"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"

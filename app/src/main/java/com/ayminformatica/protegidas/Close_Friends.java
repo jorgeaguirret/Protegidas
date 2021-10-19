@@ -22,10 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Close_Friends extends AppCompatActivity {
-    Button add_c;
-    EditText add_no1,add_no2,add_no3;
+    Button agregar_c;
+    EditText agregar_no1, agregar_no2, agregar_no3;
     Cursor cursor = null;
-    static String phone1,phone2,phone3;
+    static String fono1, fono2, fono3;
     DataBaseHelper dataBaseHelper = new DataBaseHelper(Close_Friends.this);
 
     @Override
@@ -36,18 +36,18 @@ public class Close_Friends extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
-        add_no1 = (EditText)findViewById(R.id.phone1);
-        add_no2 = (EditText)findViewById(R.id.phone2);
-        add_no3 = (EditText)findViewById(R.id.phone3);
+        agregar_no1 = (EditText)findViewById(R.id.fono1);
+        agregar_no2 = (EditText)findViewById(R.id.fono2);
+        agregar_no3 = (EditText)findViewById(R.id.fono3);
 
         List<ContactModel> everyone = dataBaseHelper.getEveryone();
         if(!everyone.isEmpty()) {
             for(ContactModel i:everyone)
-                System.out.println(i.getName());
+                System.out.println(i.getNombre());
             try {
-                add_no1.setText(everyone.get(0).getPhone());
-                add_no2.setText(everyone.get(1).getPhone());
-                add_no3.setText(everyone.get(2).getPhone());
+                agregar_no1.setText(everyone.get(0).getFono());
+                agregar_no2.setText(everyone.get(1).getFono());
+                agregar_no3.setText(everyone.get(2).getFono());
             }
             catch (Exception e)
             {
@@ -57,9 +57,9 @@ public class Close_Friends extends AppCompatActivity {
         }
 
 
-        onClickAdd1();
-        onClickAdd2();
-        onClickAdd3();
+        onClickAgregar1();
+        onClickAgregar2();
+        onClickAgregar3();
 
         //------------Bottom-Navigation---------
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -103,13 +103,13 @@ public class Close_Friends extends AppCompatActivity {
         });
     }
 
-    public void onClickAdd1()
+    public void onClickAgregar1()
     {
-        add_c = (Button)findViewById(R.id.addContact1);
+        agregar_c = (Button)findViewById(R.id.agregarContacto1);
 
         //-----This opens up a list of contacts as a new activity
         try {
-            add_c.setOnClickListener(new View.OnClickListener() {
+            agregar_c.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(Intent.ACTION_PICK);
@@ -124,13 +124,13 @@ public class Close_Friends extends AppCompatActivity {
         }
     }
 
-    public void onClickAdd2()
+    public void onClickAgregar2()
     {
-        add_c = (Button)findViewById(R.id.addContact2);
+        agregar_c = (Button)findViewById(R.id.agregarContacto2);
 
         //-----This opens up a list of contacts as a new activity
         try {
-            add_c.setOnClickListener(new View.OnClickListener() {
+            agregar_c.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(Intent.ACTION_PICK);
@@ -145,13 +145,13 @@ public class Close_Friends extends AppCompatActivity {
         }
     }
 
-    public void onClickAdd3()
+    public void onClickAgregar3()
     {
-        add_c = (Button)findViewById(R.id.addContact3);
+        agregar_c = (Button)findViewById(R.id.agregarContacto3);
 
         //-----This opens up a list of contacts as a new activity
         try {
-            add_c.setOnClickListener(new View.OnClickListener() {
+            agregar_c.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(Intent.ACTION_PICK);
@@ -167,22 +167,22 @@ public class Close_Friends extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    protected void onActivityResult(int codigoSolicitud, int codigoResultado, Intent data)
     {
         //--------if addContact1 button is clicked
-        if((requestCode==1) && (resultCode==RESULT_OK))
+        if((codigoSolicitud==1) && (codigoResultado==RESULT_OK))
         {
             try{
                 Uri uri = data.getData();
                 cursor = getContentResolver().query(uri, new String[] {ContactsContract.CommonDataKinds.Phone.NUMBER,ContactsContract.Contacts.DISPLAY_NAME}, null, null, null);
                 if(cursor != null && cursor.moveToNext())
                 {
-                    String phone = cursor.getString(0);
-                    String name = cursor.getString(1);
-                    ContactModel contactModel = new ContactModel(requestCode,name,phone);
-                    add_no1.setText(phone);
-                    boolean status = dataBaseHelper.addOne(contactModel,requestCode);
-                    String ToastMsg = status==true?"Contacto agregado exitosamente":"Error al agregar contacto";
+                    String fono = cursor.getString(0);
+                    String nombre = cursor.getString(1);
+                    ContactModel contactModel = new ContactModel(codigoSolicitud,nombre,fono);
+                    agregar_no1.setText(fono);
+                    boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
+                    String ToastMsg = status==true?"Contactooo added successfully":"Error in adding contact";
                     Toast.makeText(Close_Friends.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }
@@ -193,19 +193,19 @@ public class Close_Friends extends AppCompatActivity {
         }
 
         //--------if addContact2 button is clicked
-        if((requestCode==2) && (resultCode==RESULT_OK))
+        if((codigoSolicitud==2) && (codigoResultado==RESULT_OK))
         {
             try{
                 Uri uri = data.getData();
                 cursor = getContentResolver().query(uri, new String[] {ContactsContract.CommonDataKinds.Phone.NUMBER,ContactsContract.Contacts.DISPLAY_NAME}, null, null, null);
                 if(cursor != null && cursor.moveToNext())
                 {
-                    String phone = cursor.getString(0);
-                    String name = cursor.getString(1);
-                    ContactModel contactModel = new ContactModel(requestCode,name,phone);
-                    add_no2.setText(phone);
-                    boolean status = dataBaseHelper.addOne(contactModel,requestCode);
-                    String ToastMsg = status==true?"Contacto agregado exitosamente":"Error al agregar contacto";
+                    String fono = cursor.getString(0);
+                    String nombre = cursor.getString(1);
+                    ContactModel contactModel = new ContactModel(codigoSolicitud,nombre,fono);
+                    agregar_no2.setText(fono);
+                    boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
+                    String ToastMsg = status==true?"Contact addedddddddd successfully":"Error in adding contact";
                     Toast.makeText(Close_Friends.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }
@@ -216,19 +216,19 @@ public class Close_Friends extends AppCompatActivity {
         }
 
         //--------if addContact3 button is clicked
-        if((requestCode==3) && (resultCode==RESULT_OK))
+        if((codigoSolicitud==3) && (codigoResultado==RESULT_OK))
         {
             try{
                 Uri uri = data.getData();
                 cursor = getContentResolver().query(uri, new String[] {ContactsContract.CommonDataKinds.Phone.NUMBER,ContactsContract.Contacts.DISPLAY_NAME}, null, null, null);
                 if(cursor != null && cursor.moveToNext())
                 {
-                    String phone = cursor.getString(0);
-                    String name = cursor.getString(1);
-                    ContactModel contactModel = new ContactModel(requestCode,name,phone);
-                    add_no3.setText(phone);
-                    boolean status = dataBaseHelper.addOne(contactModel,requestCode);
-                    String ToastMsg = status==true?"Contacto agregado exitosamente":"Error al agregar contacto";;
+                    String fono = cursor.getString(0);
+                    String nombre = cursor.getString(1);
+                    ContactModel contactModel = new ContactModel(codigoSolicitud,nombre,fono);
+                    agregar_no3.setText(fono);
+                    boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
+                    String ToastMsg = status==true?"Contact added successfullyyyy":"Error in adding contact";
                     Toast.makeText(Close_Friends.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }

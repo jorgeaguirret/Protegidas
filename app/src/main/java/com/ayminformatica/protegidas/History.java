@@ -12,31 +12,28 @@ import com.ayminformatica.protegidas.R;
 
 public class History extends AppCompatActivity {
 
-    ListView lv_customerList;
+    ListView lv_listaAlertas;
     DataBaseHelper dataBaseHelper;
-    ArrayAdapter alertArrayAdapter;
+    ArrayAdapter alertaArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
-
-        lv_customerList=findViewById(R.id.lv_custList);
+        lv_listaAlertas =findViewById(R.id.lv_listaAlertas);
 
         dataBaseHelper = new DataBaseHelper(History.this);
         ShowCustomersOnListView(dataBaseHelper);
     }
 
     private void ShowCustomersOnListView(DataBaseHelper dataBaseHelper) {
-        alertArrayAdapter = new ArrayAdapter<AlertModel>(History.this, android.R.layout.simple_list_item_1, dataBaseHelper.getAllAlerts());
-        if(alertArrayAdapter.isEmpty()){
-            Toast.makeText(History.this," No hay lista que mostrar",Toast.LENGTH_SHORT).show();
+        alertaArrayAdapter = new ArrayAdapter<AlertModel>(History.this, android.R.layout.simple_list_item_1, dataBaseHelper.getAllAlerts());
+        if(alertaArrayAdapter.isEmpty()){
+            Toast.makeText(History.this,"No entries to show",Toast.LENGTH_SHORT).show();
 
         }
         else
-        lv_customerList.setAdapter(alertArrayAdapter);
+            lv_listaAlertas.setAdapter(alertaArrayAdapter);
     }
 }

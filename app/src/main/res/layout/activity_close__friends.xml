@@ -47,7 +47,7 @@
         android:layout_centerHorizontal="true">
 
         <EditText
-            android:id="@+id/phone1"
+            android:id="@+id/fono1"
             android:layout_width="165dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -62,7 +62,7 @@
             android:inputType="phone"/>
 
         <Button
-            android:id="@+id/addContact1"
+            android:id="@+id/agregarContacto1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/addContact2"
@@ -85,7 +85,7 @@
         android:layout_centerHorizontal="true">
 
         <EditText
-            android:id="@+id/phone2"
+            android:id="@+id/fono2"
             android:layout_width="165dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/phone1"
@@ -101,7 +101,7 @@
             android:inputType="phone"/>
 
         <Button
-            android:id="@+id/addContact2"
+            android:id="@+id/agregarContacto2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/addContact2"
@@ -125,7 +125,7 @@
 
 
         <EditText
-            android:id="@+id/phone3"
+            android:id="@+id/fono3"
             android:layout_width="165dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/phone1"
@@ -140,7 +140,7 @@
             android:layout_toLeftOf="@+id/addContact2"
             android:inputType="phone"/>
         <Button
-            android:id="@+id/addContact3"
+            android:id="@+id/agregarContacto3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/addContact2"

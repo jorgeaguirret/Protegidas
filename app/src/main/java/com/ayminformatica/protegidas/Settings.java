@@ -38,7 +38,7 @@ import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
 
-    Button btPicker,btHistory,btLoc;
+    Button btPicker,btHistory;
     TextView textview;
     int PLACE_PICKER_REQUEST = 1;
     //---------------------NOTIFICATION---------------------
@@ -48,13 +48,19 @@ public class Settings extends AppCompatActivity {
 
     /*/--battery declaration-----
         int isCharging;
+
         static int battery_level=0;
         private Ringtone ringtone;
+
+
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         Intent batteryStatus = context.registerReceiver(null, ifilter);
         int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
         boolean isCharging=status == BatteryManager.BATTERY_STATUS_CHARGING ||
                 status == BatteryManager.BATTERY_STATUS_FULL;
+
+
+
     public void batterylevel(){
         BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver() {
             @Override
@@ -118,7 +124,6 @@ public class Settings extends AppCompatActivity {
 
         btPicker = findViewById(R.id.bt_picker);
         btHistory = findViewById(R.id.bt_history);
-        btLoc = findViewById(R.id.bt_Loc);
         textview = findViewById(R.id.text_view);
 
         btPicker.setOnClickListener(new View.OnClickListener() {
@@ -141,14 +146,6 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),History.class);
-                startActivity(i);
-            }
-        });
-
-        btLoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),MainActivityGps.class);
                 startActivity(i);
             }
         });
@@ -197,17 +194,17 @@ public class Settings extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode==PLACE_PICKER_REQUEST){
-            if(resultCode==RESULT_OK){
+    protected void onActivityResult(int codigoSolicitud, int codigoResultado, @Nullable Intent data) {
+        if(codigoSolicitud==PLACE_PICKER_REQUEST){
+            if(codigoResultado==RESULT_OK){
                 Place place = PlacePicker.getPlace(data, this);
                 StringBuilder stringBuilder = new StringBuilder();
-                String latitude = String.valueOf(place.getLatLng().latitude);
-                String longitude = String.valueOf(place.getLatLng().longitude);
-                stringBuilder.append("LATITUDE: ");
-                stringBuilder.append(latitude);
-                stringBuilder.append("\nLONGITUDE: ");
-                stringBuilder.append(longitude);
+                String latitud = String.valueOf(place.getLatLng().latitude);
+                String longitud = String.valueOf(place.getLatLng().longitude);
+                stringBuilder.append("LATITUD: ");
+                stringBuilder.append(latitud);
+                stringBuilder.append("\nLONGITUD: ");
+                stringBuilder.append(longitud);
                 textview.setText(stringBuilder.toString());
 
 
@@ -217,3 +214,4 @@ public class Settings extends AppCompatActivity {
         }
     }
 }
+

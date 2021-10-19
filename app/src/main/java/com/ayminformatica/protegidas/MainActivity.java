@@ -25,14 +25,14 @@ import static android.Manifest.permission.CALL_PHONE;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList permissionsToRequest;
-    private ArrayList permissionsRejected = new ArrayList();
-    private ArrayList permissions = new ArrayList();
-    public static double currLong=0;
-    public static double currLat=0;
+    private ArrayList permisosParaSolicitar;
+    private ArrayList permisosRechazados = new ArrayList();
+    private ArrayList permisos = new ArrayList();
+    public static double actualLong =0;
+    public static double actualLat =0;
 
     private final static int ALL_PERMISSIONS_RESULT = 101;
-    SeguimientoUbicacion locationTrack,lt;
+    SeguimientoUbicacion seguimientoUbicacion, su;
     TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
 
-        permissions.add(ACCESS_FINE_LOCATION);
-        permissions.add(ACCESS_COARSE_LOCATION);
-        permissions.add(SEND_SMS);
-        permissions.add(READ_CONTACTS);
-        permissions.add(CALL_PHONE);
+        permisos.add(ACCESS_FINE_LOCATION);
+        permisos.add(ACCESS_COARSE_LOCATION);
+        permisos.add(SEND_SMS);
+        permisos.add(READ_CONTACTS);
+        permisos.add(CALL_PHONE);
 
-        permissionsToRequest = findUnAskedPermissions(permissions);
+        permisosParaSolicitar = findUnAskedPermissions(permisos);
         //get the permissions we have asked for before but are not granted..
         //we will store this in a global list to access later.
 
@@ -58,31 +58,31 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
 
-            if (permissionsToRequest.size() > 0)
-                requestPermissions((String[]) permissionsToRequest.toArray(new String[permissionsToRequest.size()]), ALL_PERMISSIONS_RESULT);
+            if (permisosParaSolicitar.size() > 0)
+                requestPermissions((String[]) permisosParaSolicitar.toArray(new String[permisosParaSolicitar.size()]), ALL_PERMISSIONS_RESULT);
         }
 
 
 
 
 
-        lt=new SeguimientoUbicacion(MainActivity.this);
-        locationTrack = new SeguimientoUbicacion(MainActivity.this);
+        su =new SeguimientoUbicacion(MainActivity.this);
+        seguimientoUbicacion = new SeguimientoUbicacion(MainActivity.this);
 
 
-        if (locationTrack.canGetLocation()) {
+        if (seguimientoUbicacion.canGetLocation()) {
 
 
-            double longitude = locationTrack.getLongitude();
-            double latitude = locationTrack.getLatitude();
-            this.currLat=latitude;
-            this.currLong=longitude;
-            System.out.println("lat:"+longitude+" - "+latitude);
+            double longitud = seguimientoUbicacion.getLongitud();
+            double latitud = seguimientoUbicacion.getLatitud();
+            this.actualLat =latitud;
+            this.actualLong =longitud;
+            System.out.println("lat:"+longitud+" - "+latitud);
 
-            Toast.makeText(getApplicationContext(), "Longitud:" + Double.toString(longitude) + "\nLatitud:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Longitud:  " + Double.toString(longitud) + "\nLatitud:  " + Double.toString(latitud), Toast.LENGTH_LONG).show();
         } else {
 
-            locationTrack.showSettingsAlert();
+            seguimientoUbicacion.showSettingsAlert();
         }
 
 
@@ -118,12 +118,12 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(myIntent, 0);
         }
         tv = findViewById(R.id.loc);
-        double currLat=MainActivity.currLat;
-        double currLong=MainActivity.currLong;
+        double currLat=MainActivity.actualLat;
+        double currLong=MainActivity.actualLong;
         double homeLat= UbicacionCasa.homeLat;
         double homeLong= UbicacionCasa.homeLong;
 
-       // tv.setText("Current data"+currLat+"-"+currLong+". Home data "+homeLat+"-"+homeLong);
+        // tv.setText("Current data"+currLat+"-"+currLong+". Home data "+homeLat+"-"+homeLong);
 
     }
 
@@ -160,21 +160,21 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
 
             case ALL_PERMISSIONS_RESULT:
-                for (Object perms : permissionsToRequest) {
+                for (Object perms : permisosParaSolicitar) {
                     if (!hasPermission((String) perms)) {
-                        permissionsRejected.add(perms);
+                        permisosRechazados.add(perms);
                     }
                 }
 
-                if (permissionsRejected.size() > 0) {
+                if (permisosRechazados.size() > 0) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (shouldShowRequestPermissionRationale((String) permissionsRejected.get(0))) {
+                        if (shouldShowRequestPermissionRationale((String) permisosRechazados.get(0))) {
                             showMessageOKCancel("These permissions are mandatory for the application. Please allow access.",
                                     new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                                requestPermissions((String[]) permissionsRejected.toArray(new String[permissionsRejected.size()]), ALL_PERMISSIONS_RESULT);
+                                                requestPermissions((String[]) permisosRechazados.toArray(new String[permisosRechazados.size()]), ALL_PERMISSIONS_RESULT);
                                             }
                                         }
                                     });
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        locationTrack.stopListener();
+        seguimientoUbicacion.stopListener();
     }
 
     @Override
