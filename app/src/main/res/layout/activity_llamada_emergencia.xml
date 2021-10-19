@@ -139,7 +139,7 @@
             android:textSize="24dp" />
 
         <Button
-            android:id="@+id/llamar_fono_mujer"
+            android:id="@+id/call_fono_mujer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"

@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Llamada_emergencia extends AppCompatActivity {
-    Button llamarCarabineros, llamarAmbulancia, llamarBomberos, llamarFonoMujer;
+    Button llamarCarabineros, llamarAmbulancia, llamarBomberos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,50 +24,38 @@ public class Llamada_emergencia extends AppCompatActivity {
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
 
-        //---------Llamada de emergencia a carabineros
+        //---------Emergency call to police
         llamarCarabineros = (Button) findViewById(R.id.llamar_carabineros);
         llamarCarabineros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Llamada_emergencia.this, "Llamando a carabineros", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Llamada_emergencia.this, "Calling Police", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:133"));                    //---Carabineros
                 startActivity(intent);
             }
         });
 
-        //---------Llamada de emergencia a ambulancia
+        //---------Emergency call to ambulance
         llamarAmbulancia = (Button) findViewById(R.id.llamar_ambulancia);
         llamarAmbulancia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Llamada_emergencia.this, "Llamando a ambulancia", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Llamada_emergencia.this, "Calling Ambulance", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:131"));                    //---Ambulancia
                 startActivity(intent);
             }
         });
 
-        //---------Llamada de emergencia a bomberos
+        //---------Emergency call to fire brigade
         llamarBomberos = (Button) findViewById(R.id.llamar_bomberos);
         llamarBomberos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Llamada_emergencia.this, "Llamando a bomberos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Llamada_emergencia.this, "Calling Fire Brigade", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:132"));                    //---Bomberos
-                startActivity(intent);
-            }
-        });
-
-        //---------Llamada de emergencia a fono mujer
-        llamarFonoMujer = (Button) findViewById(R.id.llamar_fono_mujer);
-        llamarFonoMujer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Llamada_emergencia.this, "Llamando a fono mujer", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:1455"));                    //---Fono Mujer
                 startActivity(intent);
             }
         });
