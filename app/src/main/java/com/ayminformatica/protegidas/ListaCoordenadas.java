@@ -1,5 +1,6 @@
 package com.ayminformatica.protegidas;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
@@ -18,6 +19,10 @@ public class ListaCoordenadas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_coordenadas2);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+
         listac = (ListView)findViewById(R.id.listView);
         miDB = new DataBaseHelperGps(this);
 

@@ -1,5 +1,6 @@
 package com.ayminformatica.protegidas;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -35,6 +36,10 @@ public class MainActivityGps extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maingps);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+
         tDireccion = (TextView) findViewById(R.id.txtDireccion);
         bGuardar = (Button) findViewById(R.id.btnGuardar);
         blistar =(Button)findViewById(R.id.btnListar);
