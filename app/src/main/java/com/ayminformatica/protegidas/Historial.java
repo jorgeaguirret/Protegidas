@@ -27,7 +27,7 @@ public class Historial extends AppCompatActivity {
     private void ShowCustomersOnListView(DataBaseHelper dataBaseHelper) {
         alertaArrayAdapter = new ArrayAdapter<ModeloAlerta>(Historial.this, android.R.layout.simple_list_item_1, dataBaseHelper.getAllAlerts());
         if(alertaArrayAdapter.isEmpty()){
-            Toast.makeText(Historial.this,"No entries to show",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Historial.this,"No hay registros para mostrar",Toast.LENGTH_SHORT).show();
 
         }
         else

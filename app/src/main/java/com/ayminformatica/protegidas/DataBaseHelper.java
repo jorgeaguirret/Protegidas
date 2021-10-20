@@ -35,7 +35,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         super(context, "contacto.db", null, 1);
     }
 
-    //called when first time database is accessed
+    //llamado cuando se accede por primera vez a la base de datos
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTableStatement = "CREATE TABLE " + CONTACTO_TABLE + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, " + COLUMNA_NOMBRE_CONTACTO + " TEXT, " + COLUMNA_FONO_CONTACTO + " TEXT)";
@@ -64,7 +64,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         else {
             insert = db.insert(CONTACTO_TABLE, null, cv);
-            System.out.println("uno agregado "+contactModel.getNombre());
+            System.out.println("Se agrego un contacto "+contactModel.getNombre());
         }
         return insert==-1?false:true;
     }
@@ -94,14 +94,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.rawQuery(queryString,null);
-        //check if database contains entries
+        //comprobando si existen registros en la base de datos
         if(cursor.moveToFirst()){
-            //loop through cursor and create new contact object
+            //recorrer el cursor y crear un nuevo objeto de contacto
             do{
                 int contactID = cursor.getInt(0);
                 String nombreContacto = cursor.getString(1);
                 String fonoContacto = cursor.getString(2);
-                System.out.println("getting "+fonoContacto);
+                System.out.println("obteniendo "+fonoContacto);
                 ModeloContacto nuevoContacto = new ModeloContacto(contactID,nombreContacto,fonoContacto);
                 returnList.add(nuevoContacto);
             }while (cursor.moveToNext());
@@ -120,9 +120,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.rawQuery(queryString,null);
-        //check if database contains entries
+        //comprobando si existen registros en la base de datos
         if(cursor.moveToFirst()){
-            //loop through cursor and create new contact object
+            //recorrer el cursor y crear un nuevo objeto de contacto
             do{
                 int alertID = cursor.getInt(0);
                 int bateria = cursor.getInt(1);

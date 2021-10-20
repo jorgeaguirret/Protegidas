@@ -89,7 +89,7 @@ public class BackgroundService extends Service {
         }
         String loc = "https://maps.google.com/?q="+ actualLat +","+ actualLong;
 
-        String msg_temp="Sent from SAFETY BATTERY ALERT.  My battery is about to die (Automatic alert).\n Battery: "+ nivel_bateria +"%.\n Current location: "+loc;
+        String msg_temp="enviado desde la App PROTEGIDAS.  Mi bateria se esta agotando (Alerta Automatica).\n Bateria: "+ nivel_bateria +"%.\n Ubicacion: "+loc;
 //        AlertModel alertModel = new AlertModel(-1,battery_level,loc,msg_temp,name.get(0),name.get(1),name.get(2),phone.get(0),phone.get(1),phone.get(2));
 //        boolean success = dataBaseHelper.addOneAlert(alertModel);
 //        String successMsg= success==true?"Added to database":"Error occurred";
@@ -128,15 +128,16 @@ public class BackgroundService extends Service {
                                   double lon2)
     {
 
-        // The math module contains a function
-        // named toRadians which converts from
-        // degrees to radians.
+        // El siguiente módulo matemático contiene una
+        // función llamado toRadians que se convierte
+        // de grados a radianes.
+
         lon1 = Math.toRadians(lon1);
         lon2 = Math.toRadians(lon2);
         lat1 = Math.toRadians(lat1);
         lat2 = Math.toRadians(lat2);
 
-        // Haversine formula
+        // Formula de Haversine
         double dlon = lon2 - lon1;
         double dlat = lat2 - lat1;
         double a = Math.pow(Math.sin(dlat / 2), 2)
@@ -145,11 +146,11 @@ public class BackgroundService extends Service {
 
         double c = 2 * Math.asin(Math.sqrt(a));
 
-        // Radius of earth in kilometers. Use 3956
-        // for miles
+        // Radio de la tierra en km.
+        // Para las millas usar 3956.
         double r = 6371;
 
-        // calculate the result
+        // Calculando el resultado
         return(c * r);
     }
 

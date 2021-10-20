@@ -46,7 +46,7 @@ public class Panel_Alerta extends AppCompatActivity {
 
 
 
-        //-------------------SPEED MESSAGES--------------------
+        //-------------------MENSAJES RAPIDOS--------------------
         Button boton1 = findViewById(R.id.emergencia);
         Button boton2 = findViewById(R.id.ayudame);
         Button boton3 = findViewById(R.id.ven_aqui_ahora);
@@ -70,21 +70,19 @@ public class Panel_Alerta extends AppCompatActivity {
 
         boton3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mensaje.setText("Ven aqui ahora!!!");
+            public void onClick(View v) { mensaje.setText("Ven a mi casa ahora!!!");
             }
         });
 
 
         boton4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mensaje.setText("Llama a la policia");
+            public void onClick(View v) { mensaje.setText("Llama a la policia");
             }
         });
 
 
-        //------------------speed dial--------------------
+        //------------------BOTON LLAMADA RAPIDA--------------------
 
         boton5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +102,7 @@ public class Panel_Alerta extends AppCompatActivity {
         double homeLat= UbicacionCasa.homeLat;
         double homeLong= UbicacionCasa.homeLong;
         String diff = String.format("%.2f", distancia(actualLat,homeLat, actualLong,homeLong));
-        // tv.setText("Distance between home and your current location is "+diff+" km");
+        // tv.setText("La distancia entre su casa y su ubicación actual es "+diff+" km");
 
 
 
@@ -118,7 +116,7 @@ public class Panel_Alerta extends AppCompatActivity {
                 List<ModeloContacto> everyone = dataBaseHelper.getEveryone();
                 System.out.println(everyone.toString());
                 if(!everyone.isEmpty()) {
-                    //-----Solved the problem of app crashing with less than 3 contacts saved
+                    //-----Se Resolvió el problema de falla de la aplicación con menos de 3 contactos guardados
                     try {
                         for(int i=0; i<3; i++) {
                             if(everyone.size()>i) {
@@ -147,18 +145,18 @@ public class Panel_Alerta extends AppCompatActivity {
                 System.out.println("Tipo de mensaje: "+tipo_mensaje);
                 if(nivel_bateria <=10)
                 {
-                    msg_temp="Sent from PERSONAL SAFETY ALERTZ." + tipo_mensaje+" My battery is about to die (Automatic alert).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
+                    msg_temp="Enviado desde la app PROTEGIDAS." + tipo_mensaje+" Mi bateria se agotara (Alerta automatica).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
                 else
                 {
-                    msg_temp="Sent from PERSONAL SAFETY ALERTZ." + tipo_mensaje+" (Manual Alert).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
+                    msg_temp="Enviado desde la app PROTEGIDAS." + tipo_mensaje+" (Alerta Manual).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
                 ModeloAlerta alertModel = new ModeloAlerta(-1, nivel_bateria,ubicacion,msg_temp,nombre.get(0),nombre.get(1),nombre.get(2),fono.get(0),fono.get(1),fono.get(2));
                 boolean success = dataBaseHelper.addOneAlert(alertModel);
                 String successMsg= success==true?"Agregado a la Base de Datos":"Ocurrio un error";
                 Toast.makeText(Panel_Alerta.this,successMsg,Toast.LENGTH_LONG).show();
                 SMS.sendSMS(fono,msg_temp);
-                showMessageOKCancel("El mensaje sent successfully to your trusted contacts. Stay safe \uD83D\uDE00");
+                showMessageOKCancel("El mensaje se envio satisfactoriamente a tus contactos. Mantente segura! \uD83D\uDE00");
             }
         });
 
@@ -171,34 +169,34 @@ public class Panel_Alerta extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
+        bottomNavigationView.setSelectedItemId(R.id.navPanelAlerta);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.dashboard:
+                    case R.id.navPanelAlerta:
                         return true;
 
-                    case R.id.about:
+                    case R.id.navSobreNosotros:
                         startActivity(new Intent(getApplicationContext(),
                                 SobreNosotros.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.settings:
+                    case R.id.navAjustes:
                         startActivity(new Intent(getApplicationContext(),
                                 Ajustes.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.description:
+                    case R.id.navDescripcion:
                         startActivity(new Intent(getApplicationContext(),
                                 Descripcion.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.close_friends:
+                    case R.id.navAmigosCercanos:
                         startActivity(new Intent(getApplicationContext(),
                                 Amigos_Cercanos.class));
                         overridePendingTransition(0,0);
@@ -233,15 +231,15 @@ public class Panel_Alerta extends AppCompatActivity {
                                    double lon2)
     {
 
-        // The math module contains a function
-        // named toRadians which converts from
-        // degrees to radians.
+        // El módulo matemático contiene una función
+        // llamado toRadians que se convierte de
+        // grados a radianes.
         lon1 = Math.toRadians(lon1);
         lon2 = Math.toRadians(lon2);
         lat1 = Math.toRadians(lat1);
         lat2 = Math.toRadians(lat2);
 
-        // Haversine formula
+        // formula de Haversine
         double dlon = lon2 - lon1;
         double dlat = lat2 - lat1;
         double a = Math.pow(Math.sin(dlat / 2), 2)
@@ -250,11 +248,11 @@ public class Panel_Alerta extends AppCompatActivity {
 
         double c = 2 * Math.asin(Math.sqrt(a));
 
-        // Radius of earth in kilometers. Use 3956
-        // for miles
+        // Radio de la tierra en km.
+        // Para las millas usar 3956.
         double r = 6371;
 
-        // calculate the result
+        // Calculando el resultado
         return(c * r);
     }
 

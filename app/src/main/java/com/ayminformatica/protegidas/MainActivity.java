@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         permisos.add(CALL_PHONE);
 
         permisosParaSolicitar = findUnAskedPermissions(permisos);
-        //get the permissions we have asked for before but are not granted..
-        //we will store this in a global list to access later.
+        //obtener los permisos que hemos solicitado antes pero que no se otorgan.
+        // Almacenaremos esto en una lista global para acceder más tarde.
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

@@ -13,12 +13,12 @@ public class SMS {
             if(num != null)
                 num_Fono = num;
             String enviar_mensaje = mensaje;
-            System.out.println("Phone number is "+num_Fono);
+            System.out.println("El numero de telefono es "+num_Fono);
             try {
-                SmsManager sms = SmsManager.getDefault(); // using android SmsManager
-                sms.sendTextMessage(num_Fono, null, enviar_mensaje, null, null); // adding number and text
+                SmsManager sms = SmsManager.getDefault(); // usando android SmsManager
+                sms.sendTextMessage(num_Fono, null, enviar_mensaje, null, null); // agregando número y texto
             } catch (Exception e) {
-                Toast.makeText(null, "Sms not Send", Toast.LENGTH_SHORT).show();
+                Toast.makeText(null, "SMS no enviado", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         }

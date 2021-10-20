@@ -29,7 +29,7 @@ public class ListaCoordenadas extends AppCompatActivity {
         ArrayList<String> listados = new ArrayList<>();
         Cursor data = miDB.getListaContenidos();
         if (data.getCount() == 0 ){
-            Toast.makeText(this," No hay lista que mostrar",Toast.LENGTH_LONG).show();
+            Toast.makeText(this," No hay registros que mostrar",Toast.LENGTH_LONG).show();
         }else{
             while (data.moveToNext()){
                 listados.add(data.getString(1));

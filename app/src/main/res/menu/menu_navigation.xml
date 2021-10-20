@@ -2,24 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/dashboard"
+        android:id="@+id/navPanelAlerta"
         android:title="Panel de Alerta"
         android:icon="@drawable/ic_dashboard"/>
     <item
-        android:id="@+id/close_friends"
+        android:id="@+id/navAmigosCercanos"
         android:title="Circulo Cercano"
         android:icon="@drawable/ic_people"/>
 
     <item
-        android:id="@+id/settings"
+        android:id="@+id/navAjustes"
         android:title="Ajustes"
         android:icon="@drawable/ic_settings"/>
     <item
-        android:id="@+id/description"
+        android:id="@+id/navDescripcion"
         android:title="Como utilizar"
         android:icon="@drawable/ic_help"/>
     <item
-        android:id="@+id/about"
+        android:id="@+id/navSobreNosotros"
         android:title="Nosotros"
         android:icon="@drawable/ic_info"/>
 

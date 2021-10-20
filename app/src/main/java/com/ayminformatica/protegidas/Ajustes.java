@@ -26,7 +26,7 @@ import android.widget.Switch;
 
 public class Ajustes extends AppCompatActivity {
 
-    Button btPicker,btHistory;
+    Button btPicker, btHistorial, btUbicacionReal;
     TextView textview;
     int PLACE_PICKER_REQUEST = 1;
     //---------------------NOTIFICATION---------------------
@@ -98,7 +98,7 @@ public class Ajustes extends AppCompatActivity {
             }
         });
 
-        //---------------------CHARGING ALERT-----------------
+        //---------------------ALERTA CARGANDO-----------------
 
 
 
@@ -108,10 +108,11 @@ public class Ajustes extends AppCompatActivity {
 
 
 
-        //----------------LOCATION PICKER---------------------
+        //----------------RECOLECTOR DE UBICACIÓN---------------------
 
         btPicker = findViewById(R.id.bt_picker);
-        btHistory = findViewById(R.id.bt_history);
+        btHistorial = findViewById(R.id.bt_historial);
+        btUbicacionReal = findViewById(R.id.bt_Ubicacion);
         textview = findViewById(R.id.text_view);
 
         btPicker.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +131,7 @@ public class Ajustes extends AppCompatActivity {
             }
         });
 
-        btHistory.setOnClickListener(new View.OnClickListener() {
+        btHistorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Historial.class);
@@ -138,39 +139,47 @@ public class Ajustes extends AppCompatActivity {
             }
         });
 
+        btUbicacionReal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MainActivityGps.class);
+                startActivity(i);
+            }
+        });
 
-        //-----------------------BOTTOM NAVIGATION---------------------------
+
+        //-----------------------MENU NAVEGACIÓN---------------------------
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.settings);
+        bottomNavigationView.setSelectedItemId(R.id.navAjustes);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.dashboard:
+                    case R.id.navPanelAlerta:
                         startActivity(new Intent(getApplicationContext(),
                                 Panel_Alerta.class));
                         overridePendingTransition(0, 0);
                         return true;
 
-                    case R.id.about:
+                    case R.id.navSobreNosotros:
                         startActivity(new Intent(getApplicationContext(),
                                 SobreNosotros.class));
                         overridePendingTransition(0, 0);
                         return true;
 
-                    case R.id.settings:
+                    case R.id.navAjustes:
                         return true;
 
-                    case R.id.description:
+                    case R.id.navDescripcion:
                         startActivity(new Intent(getApplicationContext(),
                                 Descripcion.class));
                         overridePendingTransition(0, 0);
                         return true;
 
-                    case R.id.close_friends:
+                    case R.id.navAmigosCercanos:
                         startActivity(new Intent(getApplicationContext(),
                                 Amigos_Cercanos.class));
                         overridePendingTransition(0, 0);
@@ -194,10 +203,6 @@ public class Ajustes extends AppCompatActivity {
                 stringBuilder.append("\nLONGITUD: ");
                 stringBuilder.append(longitud);
                 textview.setText(stringBuilder.toString());
-
-
-
-
             }
         }
     }

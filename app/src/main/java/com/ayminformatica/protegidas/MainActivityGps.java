@@ -66,7 +66,7 @@ public class MainActivityGps extends AppCompatActivity {
                 if (tDireccion.length()!=0){
                     agregar(datosDireccion);
                 }else {
-                    Toast.makeText(MainActivityGps.this,"ingresa algo",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivityGps.this,"Guardando registro",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -75,9 +75,9 @@ public class MainActivityGps extends AppCompatActivity {
     public void agregar(String nuevaEntrada){
         boolean insertarData = miBD.addData(nuevaEntrada);
         if (insertarData == true){
-            Toast.makeText(this,"Datos insertados correco",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Datos insertados correctamente",Toast.LENGTH_LONG).show();
         }else {
-            Toast.makeText(this,"insertados mal",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Error al insertar",Toast.LENGTH_LONG).show();
         }
     }
 

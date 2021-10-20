@@ -51,7 +51,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
             {
                 e.printStackTrace();
             }
-            System.out.println("executing....");
+            System.out.println("Ejecutando....");
         }
 
 
@@ -59,41 +59,41 @@ public class Amigos_Cercanos extends AppCompatActivity {
         onClickAgregar2();
         onClickAgregar3();
 
-        //------------Bottom-Navigation---------
+        //------------MENU NAVEGACIÓN---------
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.close_friends);
+        bottomNavigationView.setSelectedItemId(R.id.navAmigosCercanos);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.dashboard:
+                    case R.id.navPanelAlerta:
                         startActivity(new Intent(getApplicationContext(),
                                 Panel_Alerta.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.about:
+                    case R.id.navSobreNosotros:
                         startActivity(new Intent(getApplicationContext(),
                                 SobreNosotros.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.settings:
+                    case R.id.navAjustes:
                         startActivity(new Intent(getApplicationContext(),
                                 Ajustes.class));
                         overridePendingTransition(0,0);
                         return true;
 
 
-                    case R.id.description:
+                    case R.id.navDescripcion:
                         startActivity(new Intent(getApplicationContext(),
                                 Descripcion.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.close_friends:
+                    case R.id.navAmigosCercanos:
                         return true;
                 }
                 return false;
@@ -105,7 +105,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
     {
         agregar_c = (Button)findViewById(R.id.agregarContacto1);
 
-        //-----This opens up a list of contacts as a new activity
+        //-----Con esto abre la lista de contactos como una nueva activity
         try {
             agregar_c.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -126,7 +126,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
     {
         agregar_c = (Button)findViewById(R.id.agregarContacto2);
 
-        //-----This opens up a list of contacts as a new activity
+        //-----Con esto abre la lista de contactos como una nueva activity
         try {
             agregar_c.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -147,7 +147,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
     {
         agregar_c = (Button)findViewById(R.id.agregarContacto3);
 
-        //-----This opens up a list of contacts as a new activity
+        //-----Con esto abre la lista de contactos como una nueva activity
         try {
             agregar_c.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -167,7 +167,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
     @Override
     protected void onActivityResult(int codigoSolicitud, int codigoResultado, Intent data)
     {
-        //--------if addContact1 button is clicked
+        //--------si se hace clic en el boton agregar contacto1
         if((codigoSolicitud==1) && (codigoResultado==RESULT_OK))
         {
             try{
@@ -180,7 +180,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
                     ModeloContacto contactModel = new ModeloContacto(codigoSolicitud,nombre,fono);
                     agregar_no1.setText(fono);
                     boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
-                    String ToastMsg = status==true?"Contactooo added successfully":"Error in adding contact";
+                    String ToastMsg = status==true?"Contacto agregado exitosamente":"Error al agregar contacto";
                     Toast.makeText(Amigos_Cercanos.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }
@@ -190,7 +190,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
             }
         }
 
-        //--------if addContact2 button is clicked
+        //--------si se hace clic en el boton agregar contacto2
         if((codigoSolicitud==2) && (codigoResultado==RESULT_OK))
         {
             try{
@@ -203,7 +203,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
                     ModeloContacto contactModel = new ModeloContacto(codigoSolicitud,nombre,fono);
                     agregar_no2.setText(fono);
                     boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
-                    String ToastMsg = status==true?"Contact addedddddddd successfully":"Error in adding contact";
+                    String ToastMsg = status==true?"Contacto agregado exitosamente":"Error al agregar contacto";
                     Toast.makeText(Amigos_Cercanos.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }
@@ -213,7 +213,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
             }
         }
 
-        //--------if addContact3 button is clicked
+        //--------si se hace clic en el boton agregar contacto3
         if((codigoSolicitud==3) && (codigoResultado==RESULT_OK))
         {
             try{
@@ -226,7 +226,7 @@ public class Amigos_Cercanos extends AppCompatActivity {
                     ModeloContacto contactModel = new ModeloContacto(codigoSolicitud,nombre,fono);
                     agregar_no3.setText(fono);
                     boolean status = dataBaseHelper.addOne(contactModel,codigoSolicitud);
-                    String ToastMsg = status==true?"Contact added successfullyyyy":"Error in adding contact";
+                    String ToastMsg = status==true?"Contacto agregado exitosamente":"Error al agregar contacto";
                     Toast.makeText(Amigos_Cercanos.this,ToastMsg,Toast.LENGTH_SHORT).show();
                 }
             }

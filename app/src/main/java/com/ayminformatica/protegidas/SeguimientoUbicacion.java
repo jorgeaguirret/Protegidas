@@ -58,20 +58,20 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
             locationManager = (LocationManager) mContext
                     .getSystemService(LOCATION_SERVICE);
 
-            // get GPS status
+            // obtener estado GPS
             comprobarGPS = locationManager
                     .isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-            // get network provider status
+            // obtener el estado del proveedor de la red
             comprobarRed = locationManager
                     .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if (!comprobarGPS && !comprobarRed) {
-                Toast.makeText(mContext, "No Service Provider is available", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "No hay ningún proveedor de servicios disponible", Toast.LENGTH_SHORT).show();
             } else {
                 this.obtenerUbicacion = true;
 
-                // if GPS Enabled get lat/long using GPS Services
+                // si el GPS está habilitado, obtenga lat / long usando los servicios de GPS
                 if (comprobarGPS) {
 
                     if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -161,12 +161,12 @@ public class SeguimientoUbicacion extends Service implements LocationListener {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 
 
-        alertDialog.setTitle("GPS is not Enabled!");
+        alertDialog.setTitle("¡El GPS no está habilitado!");
 
-        alertDialog.setMessage("Do you want to turn on GPS?");
+        alertDialog.setMessage("¿Quieres activar el GPS?");
 
 
-        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 mContext.startActivity(intent);

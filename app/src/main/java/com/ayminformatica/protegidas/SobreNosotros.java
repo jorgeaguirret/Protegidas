@@ -25,34 +25,34 @@ public class SobreNosotros extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.about);
+        bottomNavigationView.setSelectedItemId(R.id.navSobreNosotros);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
-                    case R.id.dashboard:
+                    case R.id.navPanelAlerta:
                         startActivity(new Intent(getApplicationContext(),
                                 Panel_Alerta.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.about:
+                    case R.id.navSobreNosotros:
                         return true;
 
-                    case R.id.settings:
+                    case R.id.navAjustes:
                         startActivity(new Intent(getApplicationContext(),
                                 Ajustes.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.description:
+                    case R.id.navDescripcion:
                         startActivity(new Intent(getApplicationContext(),
                                 Descripcion.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.close_friends:
+                    case R.id.navAmigosCercanos:
                         startActivity(new Intent(getApplicationContext(),
                                 Amigos_Cercanos.class));
                         overridePendingTransition(0,0);
