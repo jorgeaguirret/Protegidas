@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    tools:context=".Main">
+
+    <ImageView
+        android:layout_width="244dp"
+        android:layout_height="236dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logoprotegidas" />
+
+    <EditText
+        android:id="@+id/User"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/user"
+        android:drawableTint="@color/colorPrimary"
+        android:gravity="center"
+        android:hint="Ingresar Nombre de Usuario"
+        android:inputType="text"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary" />
+
+    <EditText
+        android:id="@+id/Pass"
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:drawableLeft="@drawable/lock"
+        android:drawableTint="@color/colorPrimary"
+        android:gravity="center"
+        android:hint="Ingresar Contraseña"
+        android:inputType="textPassword"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#9225AA"
+        android:shadowColor="#F1EBEB"
+        android:text="Iniciar Sesión" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#9C27B0"
+        android:shadowColor="#F1EBEB"
+        android:text="Registrar" />
+
+    <Button
+        android:id="@+id/btnRegistrarcc"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#9C27B0"
+        android:shadowColor="#F1EBEB"
+        android:text="Registrar CC" />
+
+</LinearLayout>
