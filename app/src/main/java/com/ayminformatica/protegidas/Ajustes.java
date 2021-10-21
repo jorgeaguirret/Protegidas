@@ -144,7 +144,9 @@ public class Ajustes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Historial.class);
+                i.putExtra("id",u.getUsuariop_id());
                 startActivity(i);
+
             }
         });
 

@@ -41,7 +41,7 @@
         android:drawableTint="#874da2"
         android:textColor="#874da2"
         android:textColorHint="#874da2" />
-    />
+
 
     <Button
         android:id="@+id/btnEntrar"
@@ -49,7 +49,7 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_background2"
+        android:background="@drawable/gradient_background4"
         android:textColor="#ffffff"
         android:shadowColor="#F1EBEB"
         android:text="Iniciar Sesión" />
@@ -60,20 +60,11 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_background2"
+        android:background="@drawable/gradient_background4"
         android:textColor="#ffffff"
         android:shadowColor="#F1EBEB"
         android:text="Registrar" />
 
-    <Button
-        android:id="@+id/btnRegistrarcc"
-        android:layout_width="146dp"
-        android:layout_height="66dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_background2"
-        android:textColor="#ffffff"
-        android:shadowColor="#F1EBEB"
-        android:text="Registrar CC" />
+    ç
 
 </LinearLayout>

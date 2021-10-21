@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class Main extends AppCompatActivity implements View.OnClickListener {
 
     EditText user,pass;
-    Button btnEntrar,btnRegistrar,btnRegistrarcc;
+    Button btnEntrar,btnRegistrar;
     daoUsuarioPrincipal dao;
 
 
@@ -30,11 +30,11 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
         pass=(EditText)findViewById(R.id.Pass);
         btnEntrar=(Button)findViewById(R.id.btnEntrar);
         btnRegistrar=(Button)findViewById(R.id.btnRegistrar);
-        btnRegistrarcc=(Button)findViewById(R.id.btnRegistrarcc);
+
 
         btnEntrar.setOnClickListener(this);
         btnRegistrar.setOnClickListener(this);
-        btnRegistrarcc.setOnClickListener(this);
+
 
         dao=new daoUsuarioPrincipal(this);
 

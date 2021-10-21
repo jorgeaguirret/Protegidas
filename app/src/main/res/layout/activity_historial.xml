@@ -13,7 +13,7 @@
 
 
     <TextView
-        android:id="@+id/volver"
+        android:id="@+id/histHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -54,17 +54,17 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/ayudame"
+        android:id="@+id/volverAtras"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="125dp"
         android:layout_marginLeft="140dp"
-        android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:text="Volver Atras"
+        android:layout_marginTop="125dp"
+        android:background="@drawable/gradient_background4"
         android:elevation="20dp"
-        android:background="@drawable/gradient_background2"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:padding="10dp"
+        android:text="Volver Atras"
         android:textColor="#ffffff"
         android:visibility="visible"
         tools:visibility="visible" />
