@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    tools:context=".Main">
+
+    <ImageView
+        android:layout_width="244dp"
+        android:layout_height="236dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logoprotegidas" />
+
+    <EditText
+        android:id="@+id/User"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/user"
+        android:gravity="center"
+        android:hint="Ingresar Nombre de Usuario"
+        android:inputType="text"
+        android:drawableTint="#874da2"
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
+
+    <EditText
+        android:id="@+id/Pass"
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:drawableLeft="@drawable/lock"
+        android:gravity="center"
+        android:hint="Ingresar Contraseña"
+        android:inputType="textPassword"
+        android:drawableTint="#874da2"
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
+
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gradient_background4"
+        android:textColor="#ffffff"
+        android:shadowColor="#F1EBEB"
+        android:text="Iniciar Sesión" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gradient_background4"
+        android:textColor="#ffffff"
+        android:shadowColor="#F1EBEB"
+        android:text="Registrar" />
+
+    ç
+
+</LinearLayout>
