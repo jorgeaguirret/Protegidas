@@ -36,8 +36,12 @@ public class Panel_Alerta extends AppCompatActivity {
     Button alerta;
     static int nivel_bateria =0;
     private TextView battery;
-<<<<<<< HEAD
+
     double actualLati, actualLongi;
+
+
+
+
     private ArrayList permisosParaSolicitar;
     private ArrayList permisosRechazados = new ArrayList();
     private ArrayList permisos = new ArrayList();
@@ -45,12 +49,12 @@ public class Panel_Alerta extends AppCompatActivity {
     public static double actualLat =0;
 
     private final static int ALL_PERMISSIONS_RESULT = 101;
-=======
-    double actualLat, actualLong;
+
+
     int id=0;
     ModeloUsuarioPrincipal u;
     daoUsuarioPrincipal dao;
->>>>>>> b181d8133b9c6f29f246ef4c504f848b555b506c
+
 
 
     @Override
@@ -78,6 +82,24 @@ public class Panel_Alerta extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+
+        permisos.add(ACCESS_FINE_LOCATION);
+        permisos.add(ACCESS_COARSE_LOCATION);
+        permisos.add(SEND_SMS);
+        permisos.add(READ_CONTACTS);
+        permisos.add(CALL_PHONE);
+
+        permisosParaSolicitar = findUnAskedPermissions(permisos);
+        //obtener los permisos que hemos solicitado antes pero que no se otorgan.
+        // Almacenaremos esto en una lista global para acceder más tarde.
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+
+            if (permisosParaSolicitar.size() > 0)
+                requestPermissions((String[]) permisosParaSolicitar.toArray(new String[permisosParaSolicitar.size()]), ALL_PERMISSIONS_RESULT);
+        }
 
         //battery = (TextView)this.findViewById(R.id.text1);
         nivel_bateria();
