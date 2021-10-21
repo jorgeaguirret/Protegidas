@@ -208,4 +208,6 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(getApplicationContext(), Panel_Alerta.class);
         startActivityForResult(myIntent, 0);
     }
+
+
 }

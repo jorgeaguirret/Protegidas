@@ -25,6 +25,10 @@ public class Amigos_Cercanos extends AppCompatActivity {
     Cursor cursor = null;
     static String fono1, fono2, fono3;
     DataBaseHelper dataBaseHelper = new DataBaseHelper(Amigos_Cercanos.this);
+    int id=0;
+    ModeloUsuarioPrincipal u;
+    daoUsuarioPrincipal dao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,11 @@ public class Amigos_Cercanos extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+
+        Bundle b = getIntent().getExtras();
+        id=b.getInt("id");
+        dao=new daoUsuarioPrincipal(this);
+        u=dao.getUsuarioById(id);
 
         agregar_no1 = (EditText)findViewById(R.id.fono1);
         agregar_no2 = (EditText)findViewById(R.id.fono2);
@@ -69,28 +78,40 @@ public class Amigos_Cercanos extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch(menuItem.getItemId()){
                     case R.id.navPanelAlerta:
-                        startActivity(new Intent(getApplicationContext(),
-                                Panel_Alerta.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                          //      Panel_Alerta.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent = new Intent(Amigos_Cercanos.this,Panel_Alerta.class);
+                        intent.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent);
                         return true;
 
                     case R.id.navSobreNosotros:
-                        startActivity(new Intent(getApplicationContext(),
-                                SobreNosotros.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                        //        SobreNosotros.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent2 = new Intent(Amigos_Cercanos.this,SobreNosotros.class);
+                        intent2.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent2);
                         return true;
 
                     case R.id.navAjustes:
-                        startActivity(new Intent(getApplicationContext(),
-                                Ajustes.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                        //        Ajustes.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent3 = new Intent(Amigos_Cercanos.this,Ajustes.class);
+                        intent3.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent3);
                         return true;
 
 
                     case R.id.navDescripcion:
-                        startActivity(new Intent(getApplicationContext(),
-                                Descripcion.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                        //        Descripcion.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent4 = new Intent(Amigos_Cercanos.this,Descripcion.class);
+                        intent4.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent4);
                         return true;
 
                     case R.id.navAmigosCercanos:
