@@ -30,7 +30,7 @@ public class Panel_Alerta extends AppCompatActivity {
     private TextView battery;
     double actualLat, actualLong;
 
-
+//comentar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

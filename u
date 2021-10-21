@@ -1,0 +1,115 @@
+[33mcommit f4b4fcaff1ce5087c92ce16fc64a705b45f9608c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: 321f930 b7a79e4
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 21 19:27:19 2021 -0300
+
+    reparando commit
+
+[33mcommit 321f9307dd0f8131779a50aba6644800cde25b29[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 21 19:25:53 2021 -0300
+
+    reparando commit
+
+[33mcommit 925a1bb779e84ec33ec5d47db85f38ceb01d9b3d[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 21 19:01:01 2021 -0300
+
+    reparando commit
+
+[33mcommit b7a79e40826f05f4f53b8ce4566d885b71b8349b[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 21 18:42:31 2021 -0300
+
+    Regresando al branch main
+
+[33mcommit 9220a48391ea16f8e52969e7c21ec06c959e3fbc[m
+Merge: b55d473 b181d81
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 21 17:40:31 2021 -0300
+
+    Se regreso al 19-10 y se reparo la solicitud de permisos al inicio
+
+[33mcommit b55d47365ab8594b8d46a14c8c57cd654b379b34[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 21 17:36:05 2021 -0300
+
+    Se regreso al 19-10 y se reparo la solicitud de permisos al inicio
+
+[33mcommit 9c67de7c18238e47a4474318448154e9f30ed327[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 21 16:37:28 2021 -0300
+
+    Regresamos al commit de los comentarios
+
+[33mcommit b181d8133b9c6f29f246ef4c504f848b555b506c[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Wed Oct 20 22:09:37 2021 -0300
+
+    Creacion del boton atras y su stylo propio
+
+[33mcommit 5f48d2245335a9b9e8427dc9a1cd7ef9aab64164[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Wed Oct 20 21:21:48 2021 -0300
+
+    Se soluciona cierre de app al cambiar de activity en el menu, se pasa el parametro id en todas las activity
+
+[33mcommit 936e141e98a56ce60531ed0c81f9b213390f0d08[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Wed Oct 20 17:44:33 2021 -0300
+
+    Se implementa login y registro de usuario principal
+
+[33mcommit fff3bee9e2737ab75a2abb5fb3028512601837df[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Tue Oct 19 21:55:29 2021 -0300
+
+    Se comentan los metodos
+
+[33mcommit 737c3c19aecf3519f57ac6fafd595bfe06dbdaed[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Tue Oct 19 17:01:48 2021 -0300
+
+    Menu navegacion
+
+[33mcommit d8886506b80be617d5e13e31c3e444da18851909[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Tue Oct 19 15:26:16 2021 -0300
+
+    Se agrega llamada al fono mujer
+
+[33mcommit e5b31466bdbadcaa9fd9a3f0d37f2c1f738bf86f[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Tue Oct 19 12:42:09 2021 -0300
+
+    Reparacion cierre forzado
+
+[33mcommit 3b6b10de677e05c3e552eac00f091e32b6a5aafa[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Tue Oct 19 12:14:24 2021 -0300
+
+    Reestructuracion de codigo
+
+[33mcommit 3e6ccbbd2ff454b765a93f3a9e5bce71066c23a8[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Tue Oct 19 10:13:48 2021 -0300
+
+    Cambio de nombre a SeguimientoUbicacion y UbicacionCasa
+
+[33mcommit ef0df06e015b3938cd35a2ad9ff66b48c3e91a61[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Tue Oct 19 09:48:25 2021 -0300
+
+    Se agrega splash
+
+[33mcommit e90fbfc2cc9d80603c8da0e508f549efaec43f72[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Mon Oct 18 19:17:02 2021 -0300
+
+    Se agrega layout ubicacion
+
+[33mcommit 8c001fdf55da39186a5bfac459be2873a8911b86[m
+Author: jorgeaguirret <jorge.aguirret@gmail.com>
+Date:   Thu Oct 14 19:19:54 2021 -0300
+
+    Se agrega el proyecto a git
