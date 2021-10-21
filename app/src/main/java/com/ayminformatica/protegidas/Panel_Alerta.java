@@ -24,11 +24,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Panel_Alerta extends AppCompatActivity {
-    TextView tv;
+    TextView tv,nombre;
     Button alerta;
     static int nivel_bateria =0;
     private TextView battery;
     double actualLat, actualLong;
+    int id=0;
+    ModeloUsuarioPrincipal u;
+    daoUsuarioPrincipal dao;
 
 
     @Override
@@ -38,11 +41,22 @@ public class Panel_Alerta extends AppCompatActivity {
 
 
 
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         //battery = (TextView)this.findViewById(R.id.text1);
         nivel_bateria();
+
+        nombre=(TextView)findViewById(R.id.nombreUsuario);
+
+        Bundle b = getIntent().getExtras();
+        id=b.getInt("id");
+        dao=new daoUsuarioPrincipal(this);
+
+        u=dao.getUsuarioById(id);
+
+        nombre.setText(u.getNombre()+" "+u.getApellido());
 
 
 
@@ -179,27 +193,39 @@ public class Panel_Alerta extends AppCompatActivity {
                         return true;
 
                     case R.id.navSobreNosotros:
-                        startActivity(new Intent(getApplicationContext(),
-                                SobreNosotros.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                        //        SobreNosotros.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent = new Intent(Panel_Alerta.this,SobreNosotros.class);
+                        intent.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent);
                         return true;
 
                     case R.id.navAjustes:
-                        startActivity(new Intent(getApplicationContext(),
-                                Ajustes.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                        //        Ajustes.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent2 = new Intent(Panel_Alerta.this,Ajustes.class);
+                        intent2.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent2);
                         return true;
 
                     case R.id.navDescripcion:
-                        startActivity(new Intent(getApplicationContext(),
-                                Descripcion.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                          //      Descripcion.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent3 = new Intent(Panel_Alerta.this,Descripcion.class);
+                        intent3.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent3);
                         return true;
 
                     case R.id.navAmigosCercanos:
-                        startActivity(new Intent(getApplicationContext(),
-                                Amigos_Cercanos.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(),
+                                //Amigos_Cercanos.class));
+                        //overridePendingTransition(0,0);
+                        Intent intent4 = new Intent(Panel_Alerta.this,Amigos_Cercanos.class);
+                        intent4.putExtra("id",u.getUsuariop_id());
+                        startActivity(intent4);
                         return true;
                 }
                 return false;

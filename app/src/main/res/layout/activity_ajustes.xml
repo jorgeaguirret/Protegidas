@@ -31,10 +31,10 @@
         android:layout_marginHorizontal="115dp"
         android:layout_marginTop="150dp"
         android:background="@drawable/gradient_background2"
+        android:textColor="#ffffff"
         android:elevation="30dp"
         android:padding="10dp"
         android:text="VER ALERTAS ENVIADAS"
-        android:textColor="#ffffff"
         android:visibility="visible"
         tools:visibility="visible" />
 

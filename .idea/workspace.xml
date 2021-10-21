@@ -13,18 +13,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81b0023a-f60c-48be-8d5e-33c7d514f4e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/ModeloUsuarioPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/RegistrarPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/daoUsuarioPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/lock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/registrarprincipal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Ajustes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Ajustes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Amigos_Cercanos.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Amigos_Cercanos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Descripcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Descripcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Panel_Alerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/Panel_Alerta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/SobreNosotros.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ayminformatica/protegidas/SobreNosotros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_historial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_historial.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_panel_alerta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_panel_alerta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

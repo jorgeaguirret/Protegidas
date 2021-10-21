@@ -1,5 +1,6 @@
 package com.ayminformatica.protegidas;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,6 +22,9 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         user=(EditText)findViewById(R.id.User);
         pass=(EditText)findViewById(R.id.Pass);

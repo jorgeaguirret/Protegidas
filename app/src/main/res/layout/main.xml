@@ -22,12 +22,12 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/user"
-        android:drawableTint="@color/colorPrimary"
         android:gravity="center"
         android:hint="Ingresar Nombre de Usuario"
         android:inputType="text"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary" />
+        android:drawableTint="#874da2"
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <EditText
         android:id="@+id/Pass"
@@ -35,12 +35,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:drawableLeft="@drawable/lock"
-        android:drawableTint="@color/colorPrimary"
         android:gravity="center"
         android:hint="Ingresar Contraseña"
         android:inputType="textPassword"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary" />
+        android:drawableTint="#874da2"
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
+    />
 
     <Button
         android:id="@+id/btnEntrar"
@@ -48,7 +49,8 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#9225AA"
+        android:background="@drawable/gradient_background2"
+        android:textColor="#ffffff"
         android:shadowColor="#F1EBEB"
         android:text="Iniciar Sesión" />
 
@@ -58,7 +60,8 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#9C27B0"
+        android:background="@drawable/gradient_background2"
+        android:textColor="#ffffff"
         android:shadowColor="#F1EBEB"
         android:text="Registrar" />
 
@@ -68,7 +71,8 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#9C27B0"
+        android:background="@drawable/gradient_background2"
+        android:textColor="#ffffff"
         android:shadowColor="#F1EBEB"
         android:text="Registrar CC" />
 

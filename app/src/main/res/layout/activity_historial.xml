@@ -13,7 +13,7 @@
 
 
     <TextView
-        android:id="@+id/histHead"
+        android:id="@+id/volver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -30,7 +30,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="570dp"
+        android:layout_height="540dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         app:cardCornerRadius="30dp"
@@ -48,7 +48,24 @@
                 android:layout_height="wrap_content"
 
                 />
+
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/ayudame"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="140dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="Volver Atras"
+        android:elevation="20dp"
+        android:background="@drawable/gradient_background2"
+        android:padding="10dp"
+        android:textColor="#ffffff"
+        android:visibility="visible"
+        tools:visibility="visible" />
 </RelativeLayout>
