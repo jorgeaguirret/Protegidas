@@ -1,5 +1,11 @@
 package com.ayminformatica.protegidas;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.CALL_PHONE;
+import static android.Manifest.permission.READ_CONTACTS;
+import static android.Manifest.permission.SEND_SMS;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +14,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,7 +36,14 @@ public class Panel_Alerta extends AppCompatActivity {
     Button alerta;
     static int nivel_bateria =0;
     private TextView battery;
-    double actualLat, actualLong;
+    double actualLati, actualLongi;
+    private ArrayList permisosParaSolicitar;
+    private ArrayList permisosRechazados = new ArrayList();
+    private ArrayList permisos = new ArrayList();
+    public static double actualLong =0;
+    public static double actualLat =0;
+
+    private final static int ALL_PERMISSIONS_RESULT = 101;
 
 
     @Override
@@ -36,7 +51,22 @@ public class Panel_Alerta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panel_alerta);
 
+        permisos.add(ACCESS_FINE_LOCATION);
+        permisos.add(ACCESS_COARSE_LOCATION);
+        permisos.add(SEND_SMS);
+        permisos.add(READ_CONTACTS);
+        permisos.add(CALL_PHONE);
 
+        permisosParaSolicitar = findUnAskedPermissions(permisos);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+
+            if (permisosParaSolicitar.size() > 0)
+                requestPermissions((String[]) permisosParaSolicitar.toArray(new String[permisosParaSolicitar.size()]), ALL_PERMISSIONS_RESULT);
+
+
+        }
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
@@ -97,11 +127,11 @@ public class Panel_Alerta extends AppCompatActivity {
 
         tv = findViewById(R.id.loc);
         alerta = findViewById(R.id.send_alert);
-        actualLat =MainActivity.actualLat;
-        actualLong =MainActivity.actualLong;
+        actualLati =MainActivity.actualLat;
+        actualLongi =MainActivity.actualLong;
         double homeLat= UbicacionCasa.homeLat;
         double homeLong= UbicacionCasa.homeLong;
-        String diff = String.format("%.2f", distancia(actualLat,homeLat, actualLong,homeLong));
+        String diff = String.format("%.2f", distancia(actualLati,homeLat, actualLongi,homeLong));
         // tv.setText("La distancia entre su casa y su ubicación actual es "+diff+" km");
 
 
@@ -141,15 +171,15 @@ public class Panel_Alerta extends AppCompatActivity {
 
                 String msg_temp="";
                 String tipo_mensaje = mensaje.getText().toString();
-                String ubicacion = "https://maps.google.com/?q="+ actualLat +","+ actualLong;
+                String ubicacion = "https://maps.google.com/?q="+ actualLati +","+ actualLongi;
                 System.out.println("Tipo de mensaje: "+tipo_mensaje);
                 if(nivel_bateria <=10)
                 {
-                    msg_temp="Enviado desde la app PROTEGIDAS. " + tipo_mensaje+" Mi bateria se agotara (Alerta automatica).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
+                    msg_temp="Enviado desde la app PROTEGIDAS." + tipo_mensaje+" Mi bateria se agotara (Alerta automatica).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
                 else
                 {
-                    msg_temp="Enviado desde la app PROTEGIDAS. " + tipo_mensaje+" (Alerta Manual).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
+                    msg_temp="Enviado desde la app PROTEGIDAS." + tipo_mensaje+" (Alerta Manual).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
                 ModeloAlerta alertModel = new ModeloAlerta(-1, nivel_bateria,ubicacion,msg_temp,nombre.get(0),nombre.get(1),nombre.get(2),fono.get(0),fono.get(1),fono.get(2));
                 boolean success = dataBaseHelper.addOneAlert(alertModel);
@@ -272,5 +302,31 @@ public class Panel_Alerta extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Llamada_emergencia.class);
         startActivity(intent);
+    }
+
+    private ArrayList findUnAskedPermissions(ArrayList wanted) {
+        ArrayList result = new ArrayList();
+
+        for (Object perm : wanted) {
+            if (!hasPermission((String) perm)) {
+                result.add(perm);
+                Toast.makeText(this,"Por ser la primera vez, Sugerimos que Reinicies la aplicacion para que el GPS funcione correctamente",Toast.LENGTH_LONG).show();
+            }
+        }
+
+        return result;
+    }
+
+    private boolean hasPermission(String permission) {
+        if (canMakeSmores()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                return (checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED);
+            }
+        }
+        return true;
+    }
+
+    private boolean canMakeSmores() {
+        return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
     }
 }
