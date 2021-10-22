@@ -23,14 +23,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivityGps"
+            android:name=".Principal"
             android:exported="true" />
+        <!--
+                <activity
+                    android:name=".MainActivity5"
+                    android:exported="true" />
+       -->
+                <activity
+                    android:name=".MainActivityGps"
+                    android:exported="true" />
+                <activity
+                    android:name=".ListaCoordenadas"
+                    android:exported="true" />
+
         <activity
-            android:name=".ListaCoordenadas"
-            android:exported="true" />
-        <!--<activity
-            android:name=".Splash"
-            android:exported="true" />-->
+                    android:name=".Splash"
+                    android:exported="true" />
 
         <service
             android:name=".BackgroundService"
@@ -60,9 +69,14 @@
         <activity android:name=".Ajustes" />
         <activity android:name=".SobreNosotros" />
         <activity android:name=".Panel_Alerta" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
+        <!--
         <activity
             android:name=".Splash"
+            android:exported="true"/>
+        -->
+        <activity
+            android:name=".MainActivity5"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

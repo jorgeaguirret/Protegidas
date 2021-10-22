@@ -39,8 +39,8 @@ public class ModeloAlerta {
     public String toString() {
         return "Alerta Enviada" +
                 "\nID Alerta:  " + id +
-                ", \nNivel de batería:  " + bateria + '%' +
-                ", \nUbicación:  '" + ubicacion + '\'' +
+               // ", \nNivel de batería:  " + bateria + '%' +
+              //  ", \nUbicación:  '" + ubicacion + '\'' +
                 ", \nMensaje de Alerta:  '" + mensajeAlerta + '\'' +
                 ", \nEnviado el:  '" + horaCreada + '\'' +
                 ", \nNombre de contacto N°1:  '" + nombreContacto1 + '\'' +

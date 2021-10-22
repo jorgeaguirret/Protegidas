@@ -26,13 +26,13 @@
         android:textColorHighlight="#000000"
         android:textColorLink="#000000"
         android:textIsSelectable="true"
-        android:textSize="22sp" />
+        android:textSize="21sp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="570dp"
+        android:layout_height="540dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
