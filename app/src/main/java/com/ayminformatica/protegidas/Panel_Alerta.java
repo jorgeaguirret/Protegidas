@@ -171,6 +171,13 @@ public class Panel_Alerta extends AppCompatActivity {
                     {
                         e.printStackTrace();
                     }
+                }else{
+
+                    startActivity(new Intent(getApplicationContext(),
+                            Amigos_Cercanos.class));
+                    Toast.makeText(getApplicationContext(),"Agrega contactos para enviar SMS",Toast.LENGTH_LONG).show();
+                    overridePendingTransition(0,0);
+                    return ;
                 }
 
                 String msg_temp="";
