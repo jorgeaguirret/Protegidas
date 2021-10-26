@@ -24,78 +24,77 @@
 
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
         android:layout_width="350dp"
-        android:layout_marginTop="215dp"
         android:layout_height="85dp"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="27dp"
             android:text="Llamar al 133"
-            android:textSize="24dp"
             android:textColor="#000000"
-            android:layout_marginLeft="30dp"
-            />
-    <Button
-        android:id="@+id/llamar_carabineros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/call_ambulance"
-        android:layout_alignEnd="@+id/call_ambulance"
-        android:layout_alignRight="@+id/call_ambulance"
-        android:layout_marginLeft="210dp"
-        android:layout_marginVertical="20dp"
-        android:text="Carabineros"
-        android:textColor="#ffffff"
-        android:background="@drawable/gradient_background4"
-        android:padding="10dp"
-        android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
+            android:textSize="24dp" />
 
-    <androidx.cardview.widget.CardView
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        android:layout_width="350dp"
-        android:layout_marginTop="345dp"
-        android:layout_height="85dp"
-        android:layout_centerHorizontal="true">
-
-        <TextView
+        <Button
+            android:id="@+id/llamar_carabineros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
-            android:text="Llamar al 131"
-            android:textSize="24dp"
-            android:textColor="#000000"
-            android:layout_marginLeft="30dp"
-            />
-
-    <Button
-        android:id="@+id/llamar_ambulancia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/call_fire_brigade"
-        android:layout_alignEnd="@+id/call_fire_brigade"
-        android:layout_alignRight="@+id/call_fire_brigade"
-        android:layout_marginLeft="220dp"
-        android:layout_marginVertical="20dp"
-        android:text="Ambulancia"
-        android:textColor="#ffffff"
-        android:background="@drawable/gradient_background4"
-        android:padding="10dp"
-        android:textStyle="bold" />
+            android:layout_above="@+id/call_ambulance"
+            android:layout_alignEnd="@+id/call_ambulance"
+            android:layout_alignRight="@+id/call_ambulance"
+            android:layout_marginVertical="20dp"
+            android:layout_marginLeft="210dp"
+            android:background="@drawable/gradient_background4"
+            android:padding="10dp"
+            android:text="Carabineros"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
         android:layout_height="85dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="465dp"
+        android:layout_marginTop="270dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="27dp"
+            android:text="Llamar al 131"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+        <Button
+            android:id="@+id/llamar_ambulancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/call_fire_brigade"
+            android:layout_alignEnd="@+id/call_fire_brigade"
+            android:layout_alignRight="@+id/call_fire_brigade"
+            android:layout_marginVertical="20dp"
+            android:layout_marginLeft="220dp"
+            android:background="@drawable/gradient_background4"
+            android:padding="10dp"
+            android:text="Ambulancia"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="85dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="390dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -125,7 +124,7 @@
         android:layout_width="350dp"
         android:layout_height="85dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="585dp"
+        android:layout_marginTop="510dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -150,5 +149,19 @@
             android:textColor="#ffffff"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/volver"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="630dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/gradient_background2"
+        android:padding="10dp"
+        android:text="Atras"
+        android:textColor="#ffffff"
+        android:visibility="visible"
+        tools:visibility="visible" />
 
 </RelativeLayout>

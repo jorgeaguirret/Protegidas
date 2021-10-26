@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Llamada_emergencia extends AppCompatActivity {
-    Button llamarCarabineros, llamarAmbulancia, llamarBomberos, llamarFonoMujer;
+    Button llamarCarabineros, llamarAmbulancia, llamarBomberos, llamarFonoMujer , btAtras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,15 @@ public class Llamada_emergencia extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:1455"));                    //---Fono Mujer
                 startActivity(intent);
+            }
+        });
+
+        btAtras = (Button) findViewById(R.id.volver);
+        btAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Panel_Alerta.class);
+                startActivity(i);
             }
         });
     }

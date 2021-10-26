@@ -43,25 +43,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="380dp"
         android:background="@drawable/gradient_background2"
         android:elevation="30dp"
         android:padding="10dp"
         android:text="UBICACIÓN ACTUAL"
         android:textColor="#ffffff"
-        android:visibility="visible"
-        tools:visibility="visible" />
+        android:visibility="invisible"
+        tools:visibility="invisible" />
 
     <Button
         android:id="@+id/bt_Ubicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="280dp"
         android:background="@drawable/gradient_background2"
         android:elevation="30dp"
         android:padding="10dp"
-        android:text="UBICACIÓN REAL"
+        android:text="UBICACIÓN TIEMPO REAL"
         android:textColor="#ffffff"
         android:visibility="visible"
         tools:visibility="visible" />
