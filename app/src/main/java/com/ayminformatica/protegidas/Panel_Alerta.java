@@ -186,11 +186,11 @@ public class Panel_Alerta extends AppCompatActivity {
                 System.out.println("Tipo de mensaje: "+tipo_mensaje);
                 if(nivel_bateria <=10)
                 {
-                    msg_temp="Enviado desde la app PROTEGIDAS." + tipo_mensaje+" Mi bateria se agotara (Alerta automatica).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
+                    msg_temp="Enviado desde la app PROTEGIDAS. " + tipo_mensaje+" Mi bateria se agotara (Alerta automatica).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
                 else
                 {
-                    msg_temp="Enviado desde la app PROTEGIDAS." + tipo_mensaje+" (Alerta Manual).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
+                    msg_temp="Enviado desde la app PROTEGIDAS. " + tipo_mensaje+" (Alerta Manual).\nBateria: "+ nivel_bateria +"%.\nUbicacion:  "+ubicacion;
                 }
                 ModeloAlerta alertModel = new ModeloAlerta(-1, nivel_bateria,ubicacion,msg_temp,nombre.get(0),nombre.get(1),nombre.get(2),fono.get(0),fono.get(1),fono.get(2));
                 boolean success = dataBaseHelper.addOneAlert(alertModel);

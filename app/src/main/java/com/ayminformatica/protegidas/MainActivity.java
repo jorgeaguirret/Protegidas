@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
             this.actualLong =longitud;
             System.out.println("lat:"+longitud+" - "+latitud);
 
-            Toast.makeText(getApplicationContext(), "Longitud:  " + Double.toString(longitud) + "\nLatitud:  " + Double.toString(latitud), Toast.LENGTH_LONG).show();
+            //Coordenadas mostradas al inicio de la app
+            Toast.makeText(getApplicationContext(), "Mi Longitud es:  " + Double.toString(longitud) + "\nMi Latitud es:  " + Double.toString(latitud), Toast.LENGTH_LONG).show();
         } else {
 
             seguimientoUbicacion.showSettingsAlert();
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 if (permisosRechazados.size() > 0) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (shouldShowRequestPermissionRationale((String) permisosRechazados.get(0))) {
-                            showMessageOKCancel("These permissions are mandatory for the application. Please allow access.",
+                            showMessageOKCancel("Estos permisos son obligatorios para la aplicación. Por favor, permite el acceso",
                                     new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -191,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(MainActivity.this)
                 .setMessage(message)
                 .setPositiveButton("OK", okListener)
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton("Cancelar", null)
                 .create()
                 .show();
     }

@@ -16,82 +16,87 @@
         android:layout_height="550dp"
         android:layout_centerHorizontal="true">
 
-<ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_height="match_parent"
+            android:background="#C85A0688">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="10dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="20dp"
-                android:elegantTextHeight="true"
-                android:text ="ACERCA DE LA APP:"
-                android:fontFamily="@font/capriola"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="26dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:paddingHorizontal="10dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:elegantTextHeight="true"
-                    android:text ="\t\tEsta es una importante herramienta para su seguridad en situaciones de emergencia. \n\t\t
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:elegantTextHeight="true"
+                    android:fontFamily="@font/capriola"
+                    android:padding="10dp"
+                    android:text="ACERCA DE LA APP:"
+                    android:textColor="#FDFBFB"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:elegantTextHeight="true"
+                    android:paddingHorizontal="10dp"
+                    android:text="\t\tEsta es una importante herramienta para su seguridad en situaciones de emergencia. \n\t\t
 Esta aplicación ayudara cuando su seguridad está en riesgo al ser un puente de comunicación con sus contactos de confianza a quienes entregara su ubicación actual a través de una alerta vía mensaje de texto (SMS).
 \n\t\tCuando la función de alerta automática está activada, se enviara un mensaje SMS a sus contactos de confianza indicando que su dispositivo está a punto de quedar sin batería.
 \n\t\tAdemás en todas las alertas enviadas se mostrara el porcentaje de batería que cuenta el dispositivo."
 
-                android:textStyle="normal"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="24dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="10dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10dp"
-                android:elegantTextHeight="true"
-                android:text ="COMO UTILIZAR:"
-                android:fontFamily="@font/capriola"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="26dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="3dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:elegantTextHeight="true"
-                android:text ="\PANEL DE ALERTA:"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="25dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="1dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:elegantTextHeight="true"
-                android:text ="
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="24dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:elegantTextHeight="true"
+                    android:fontFamily="@font/capriola"
+                    android:padding="10dp"
+                    android:text="COMO UTILIZAR:"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:elegantTextHeight="true"
+                    android:padding="3dp"
+                    android:text="\PANEL DE ALERTA:"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:elegantTextHeight="true"
+                    android:padding="1dp"
+                    android:text="
 \t⦁	Activar / desactivar la ALERTA AUTOMÁTICA para enviar su ubicación junto con un mensaje de texto, automáticamente cuando la batería alcance un límite establecido.
 \n\t⦁	ENVIAR ALERTA:
 \n\tEnvíe su ubicación actual junto con los detalles adicionales INMEDIATAMENTE con un solo toque a sus contactos de confianza.
@@ -99,74 +104,75 @@ Esta aplicación ayudara cuando su seguridad está en riesgo al ser un puente de
 \n\tSeleccione el mensaje que desea compartir en la pantalla y esta alerta se llegará junto con su ubicación actual el que puede ser abierto atraves de google maps.
 \n\t⦁	LLAMADA DE EMERGENCIA:
 \n\Solo con un toque en el 'boton rojo' puedes llamar a las instituciones de emergencia en caso de algún problema."
-                android:textStyle="normal"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="24dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="3dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:elegantTextHeight="true"
-                android:text ="\tCIRCULO CERCANOS:"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="25dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="3dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:elegantTextHeight="true"
-                android:text ="\tSeleccione hasta 3 contactos de emergencia con los que le gustaría compartir su ubicación actual."
-                android:textStyle="normal"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="24dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="3dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:elegantTextHeight="true"
-                android:text ="\tAJUSTES:"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="25dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:padding="3dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:elegantTextHeight="true"
-                android:text ="\t⦁	UBICACIÓN: marca la ubicación actual.
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="24dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:elegantTextHeight="true"
+                    android:padding="3dp"
+                    android:text="\tCIRCULO CERCANOS:"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:elegantTextHeight="true"
+                    android:padding="3dp"
+                    android:text="\tSeleccione hasta 3 contactos de emergencia con los que le gustaría compartir su ubicación actual."
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="24dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:elegantTextHeight="true"
+                    android:padding="3dp"
+                    android:text="\tAJUSTES:"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:elegantTextHeight="true"
+                    android:padding="3dp"
+                    android:text="\t⦁	UBICACIÓN: marca la ubicación actual.
 \n\t⦁	PORCENTAJE DE BATERÍA DE EMERGENCIA:
 \n\tEstablezca el porcentaje de batería en el que su ubicación sera compartida automáticamente con sus contactos de confianza / de emergencia que seleccionó en 'CIRCULO CERCANO', cuando la bateria alcalce ese nivel.
 \n\t⦁	ALERTA DE CARGA DE BATERÍA:
  \n\tEstablezca el porcentaje de batería en el que desea que se le notifique mientras carga su dispositivo.\n\n\n\n"
-                android:textStyle="normal"
-                android:textColor="#000000"
-                android:textColorHighlight="#E91E63"
-                android:textIsSelectable="true"
-                android:textSize="24dp" />
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#E91E63"
+                    android:textIsSelectable="true"
+                    android:textSize="24dp"
+                    android:textStyle="normal" />
 
 
-
-
-
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

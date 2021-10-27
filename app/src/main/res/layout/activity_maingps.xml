@@ -1,4 +1,4 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,56 +7,77 @@
     tools:context=".MainActivityGps">
 
     <TextView
-        android:id="@+id/txtDireccion"
+        android:id="@+id/loc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textColor="#874da2"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="UBICACIÓN EN TIEMPO REAL"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorLink="#000000"
+        android:textIsSelectable="true"
+        android:textSize="22sp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="200dp"
+        app:cardCornerRadius="30dp">
+
+
+        <TextView
+            android:id="@+id/txtDireccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:paddingRight="10dp"
+            android:text="Hello World!"
+            android:textAlignment="gravity"
+            android:textColor="#874da2"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="115dp"
-        android:text="GUARDAR"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="400dp"
         android:background="@drawable/gradient_background2"
-        android:textColor="#ffffff"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
+        android:text="Guardar"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btnListar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="285dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="400dp"
         android:background="@drawable/gradient_background2"
-        android:text="LISTAR"
+        android:text="Listar"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/bt_volver"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/gradient_background2"
+        android:padding="10dp"
+        android:text="Atras"
         android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
-        app:layout_constraintStart_toEndOf="@+id/btnGuardar"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="visible"
+        tools:visibility="visible" />
 
 
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

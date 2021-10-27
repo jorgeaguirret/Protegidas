@@ -29,19 +29,22 @@
         android:layout_height="325dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
+        app:cardBackgroundColor="#A15A0688"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:elegantTextHeight="true"
             android:lineHeight="30dp"
             android:padding="15dp"
             android:text="Esta aplicación ha sido desarrollada por el equipo de Aym Informática. Los miembros del equipo son: "
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="20sp" />
 
@@ -56,7 +59,7 @@
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:text="Juan Barra Urbina "
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="18sp" />
 
@@ -70,7 +73,7 @@
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:text="Francisco Riveros Arias"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="18sp" />
 
@@ -84,7 +87,7 @@
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:text="Jorge Aguirre Toledo"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="18sp" />
 
@@ -95,6 +98,7 @@
         android:layout_height="170dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="480dp"
+        app:cardBackgroundColor="#A15A0688"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -108,7 +112,7 @@
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
             android:text="Estudiantes de ..."
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="20sp" />
 
@@ -117,13 +121,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="45dp"
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:paddingLeft="15dp"
             android:text="Universidad Tecnológica de Chile"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="18sp" />
 
@@ -138,7 +142,7 @@
             android:padding="10dp"
             android:paddingLeft="15dp"
             android:text="Inacap, Maipú"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="18sp" />
 
@@ -148,12 +152,12 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="145dp"
-            android:layout_marginTop="125dp"
+            android:layout_marginTop="120dp"
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:paddingLeft="15dp"
             android:text="www.protegidas.cl"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="18sp" />
 

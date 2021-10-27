@@ -29,7 +29,7 @@ import java.util.Locale;
 public class MainActivityGps extends AppCompatActivity {
 
     TextView tDireccion;
-    Button bGuardar,blistar;
+    Button bGuardar,blistar, bVolver;
     DataBaseHelperGps miBD;
 
     @Override
@@ -43,6 +43,7 @@ public class MainActivityGps extends AppCompatActivity {
         tDireccion = (TextView) findViewById(R.id.txtDireccion);
         bGuardar = (Button) findViewById(R.id.btnGuardar);
         blistar =(Button)findViewById(R.id.btnListar);
+        bVolver =(Button)findViewById(R.id.bt_volver);
 
         miBD = new DataBaseHelperGps(this);
 
@@ -68,6 +69,13 @@ public class MainActivityGps extends AppCompatActivity {
                 }else {
                     Toast.makeText(MainActivityGps.this,"Guardando registro",Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        bVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityGps.this,Ajustes.class);
+                startActivity(intent);
             }
         });
     }
@@ -118,8 +126,8 @@ public class MainActivityGps extends AppCompatActivity {
                         loc.getLatitude(), loc.getLongitude(), 1);
                 if (!list.isEmpty()) {
                     Address DirCalle = list.get(0);
-                    tDireccion.setText("Mi direccion es: "
-                            + DirCalle.getAddressLine(0) + "\n Longitud: "+loc.getLongitude()+ "\n Latitud: "+loc.getLatitude());
+                    tDireccion.setText("Mi ubicación es: "
+                            + DirCalle.getAddressLine(0) + "\n\n Mi Longitud: "+loc.getLongitude()+ "\n Mi Latitud: "+loc.getLatitude());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
