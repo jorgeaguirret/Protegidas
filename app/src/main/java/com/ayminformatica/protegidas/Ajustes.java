@@ -142,7 +142,7 @@ public class Ajustes extends AppCompatActivity {
         btUbicacionReal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), MainActivityGps.class);
+                Intent i = new Intent(getApplicationContext(), UbicacionTiempoRealGps.class);
                 startActivity(i);
             }
         });

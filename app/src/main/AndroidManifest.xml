@@ -29,17 +29,16 @@
                 <activity
                     android:name=".MainActivity5"
                     android:exported="true" />
-       -->
-                <activity
-                    android:name=".MainActivityGps"
-                    android:exported="true" />
-                <activity
-                    android:name=".ListaCoordenadas"
-                    android:exported="true" />
-
+        -->
         <activity
-                    android:name=".Splash"
-                    android:exported="true" />
+            android:name=".UbicacionTiempoRealGps"
+            android:exported="true" />
+        <activity
+            android:name=".ListaCoordenadas"
+            android:exported="true" />
+        <activity
+            android:name=".Splash"
+            android:exported="true" />
 
         <service
             android:name=".BackgroundService"
@@ -76,8 +75,8 @@
             android:exported="true"/>
         -->
         <activity
-            android:name=".MainActivity5"
-            android:exported="true" >
+            android:name=".Patron"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

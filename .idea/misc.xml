@@ -31,12 +31,16 @@
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_main.xml" value="0.2259963768115942" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_main5.xml" value="0.264" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_maingps.xml" value="0.1" />
-        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_panel_alerta.xml" value="0.18342391304347827" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_panel_alerta.xml" value="0.264" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_panel_nuevo.xml" value="0.12" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_principal.xml" value="0.1" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_registo_usuario.xml" value="0.24864130434782608" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_settings.xml" value="0.2259963768115942" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_sobre_nosotros.xml" value="0.18115942028985507" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_splash.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_ubicacion_tiempo_real_gps.xml" value="0.1" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/main.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/paneladaptable.xml" value="0.2" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/registrarprincipal.xml" value="0.18115942028985507" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/splash.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/menu/menu_navigation.xml" value="0.4" />

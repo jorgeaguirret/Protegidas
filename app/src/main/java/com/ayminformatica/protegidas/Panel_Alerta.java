@@ -322,6 +322,8 @@ public class Panel_Alerta extends AppCompatActivity {
             if (!hasPermission((String) perm)) {
                 result.add(perm);
                 Toast.makeText(this,"Por ser la primera vez, Sugerimos que Reinicies la aplicacion para que el GPS funcione correctamente",Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(this, RegistoUsuario.class);
+                //startActivity(intent);
             }
         }
 
