@@ -13,12 +13,12 @@ import java.util.List;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
-    public static final String CONTACTO_TABLE = "CONTACTO_TABLE";
+    public static final String CONTACTO = "CONTACTO";
     public static final String COLUMN_ID = "ID";
     public static final String COLUMNA_NOMBRE_CONTACTO = "NOMBRE_CONTACTO";
     public static final String COLUMNA_FONO_CONTACTO = "FONO_CONTACTO";
     public static final String COLUMNA_CONTACTO_ACTIVO = "CONTACTO_ACTIVO";
-    public static final String TABLA_ALERTA = "TABLA_ALERTA";
+    public static final String ALERTA = "ALERTA";
     public static final String ALERTA_ID = "ALERTA_ID";
     public static final String BATERIA = "BATERIA";
     public static final String UBICACION = "UBICACION";
@@ -32,15 +32,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String FONO_CONTACTO3 = "FONO_CONTACTO3";
 
     public DataBaseHelper(@Nullable Context context) {
-        super(context, "contacto.db", null, 1);
+        super(context, "ProtegidasBD", null, 1);
     }
 
     //llamado cuando se accede por primera vez a la base de datos
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + CONTACTO_TABLE + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, " + COLUMNA_NOMBRE_CONTACTO + " TEXT, " + COLUMNA_FONO_CONTACTO + " TEXT)";
+        String createTableStatement = "CREATE TABLE " + CONTACTO + "(" + COLUMN_ID + " INTEGER PRIMARY KEY, " + COLUMNA_NOMBRE_CONTACTO + " TEXT, " + COLUMNA_FONO_CONTACTO + " TEXT)";
         db.execSQL(createTableStatement);
-        String createAlertTable = "CREATE TABLE " + TABLA_ALERTA + "(" + ALERTA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + BATERIA + " INT," + UBICACION + " TEXT, " + MENSAJE_ALERTA + " TEXT," + HORA_CREADA + " DATETIME DEFAULT CURRENT_TIMESTAMP, " + NOMBRE_CONTACTO1 + " TEXT, " + FONO_CONTACTO1 + " TEXT, " + NOMBRE_CONTACTO2 + " TEXT, " + FONO_CONTACTO2 + " TEXT, " + NOMBRE_CONTACTO3 + " TEXT, " + FONO_CONTACTO3 + " TEXT)";
+        String createAlertTable = "CREATE TABLE " + ALERTA + "(" + ALERTA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + BATERIA + " INT," + UBICACION + " TEXT, " + MENSAJE_ALERTA + " TEXT," + HORA_CREADA + " DATETIME DEFAULT CURRENT_TIMESTAMP, " + NOMBRE_CONTACTO1 + " TEXT, " + FONO_CONTACTO1 + " TEXT, " + NOMBRE_CONTACTO2 + " TEXT, " + FONO_CONTACTO2 + " TEXT, " + NOMBRE_CONTACTO3 + " TEXT, " + FONO_CONTACTO3 + " TEXT)";
         db.execSQL(createAlertTable);
     }
 
@@ -53,17 +53,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        String checkQuery="SELECT "+ COLUMNA_FONO_CONTACTO +" FROM "+CONTACTO_TABLE+" WHERE "+COLUMN_ID+"="+id;
+        String checkQuery="SELECT "+ COLUMNA_FONO_CONTACTO +" FROM "+ CONTACTO +" WHERE "+COLUMN_ID+"="+id;
         Cursor cursor = db.rawQuery(checkQuery,null);
         boolean exists = (cursor.getCount() > 0);
         long insert;
         cv.put(COLUMNA_NOMBRE_CONTACTO,contactModel.getNombre());
         cv.put(COLUMNA_FONO_CONTACTO,contactModel.getFono());
         if(exists){
-            insert= db.update(CONTACTO_TABLE,cv,COLUMN_ID+"= ? ",new String[]{String.valueOf(id)});
+            insert= db.update(CONTACTO,cv,COLUMN_ID+"= ? ",new String[]{String.valueOf(id)});
         }
         else {
-            insert = db.insert(CONTACTO_TABLE, null, cv);
+            insert = db.insert(CONTACTO, null, cv);
             System.out.println("Se agrego un contacto "+contactModel.getNombre());
         }
         return insert==-1?false:true;
@@ -83,14 +83,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(NOMBRE_CONTACTO3,alertModel.getNombreContacto3());
         cv.put(FONO_CONTACTO3,alertModel.getFonoContacto3());
 
-        long insert = db.insert(TABLA_ALERTA, null, cv);
+        long insert = db.insert(ALERTA, null, cv);
         return insert==-1?false:true;
     }
 
     public List<ModeloContacto> getEveryone(){
         List<ModeloContacto> returnList = new ArrayList<>();
 
-        String queryString= "SELECT * FROM "+CONTACTO_TABLE;
+        String queryString= "SELECT * FROM "+ CONTACTO;
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.rawQuery(queryString,null);
@@ -116,7 +116,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public List<ModeloAlerta> getAllAlerts(){
         List<ModeloAlerta> returnList = new ArrayList<>();
 
-        String queryString= "SELECT * FROM "+ TABLA_ALERTA;
+        String queryString= "SELECT * FROM "+ ALERTA;
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.rawQuery(queryString,null);

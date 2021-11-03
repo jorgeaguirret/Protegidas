@@ -7,12 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by Server on 06/03/2019.
+ * Created by Server on 06/08/2021.
  */
 
 public class DataBaseHelperGps extends SQLiteOpenHelper {
     private static final int BD_version = 1;
-    public static  final String TABLE_NOMBRE = "SQLiteGPS";
+    public static  final String TABLE_NOMBRE = "Ubicacion_Actual";
     public static final  String COLUMN_ID = "id";
     public static final  String COLUMN_DIRECCION = "direccion";
 
@@ -30,7 +30,7 @@ public class DataBaseHelperGps extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE IF EXISTS SQLiteGPS";
+        String sql = "DROP TABLE IF EXISTS ProtegidasBD";
         db.execSQL(sql);
         onCreate(db);
     }

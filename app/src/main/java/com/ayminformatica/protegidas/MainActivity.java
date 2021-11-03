@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("lat:"+longitud+" - "+latitud);
 
             //Coordenadas mostradas al inicio de la app
-            //Toast.makeText(getApplicationContext(), "Mi Longitud es:  " + Double.toString(longitud) + "\nMi Latitud es:  " + Double.toString(latitud), Toast.LENGTH_LONG).show();
+/*Aqui controlo el mensaje de inicio*/       Toast.makeText(getApplicationContext(), "Mi Longitud es:  " + Double.toString(longitud) + "\nMi Latitud es:  " + Double.toString(latitud), Toast.LENGTH_LONG).show();
         } else {
 
             seguimientoUbicacion.showSettingsAlert();

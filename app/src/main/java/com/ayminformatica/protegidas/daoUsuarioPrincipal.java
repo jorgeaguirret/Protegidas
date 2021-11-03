@@ -12,7 +12,7 @@ public class daoUsuarioPrincipal {
     UsuarioPrincipal u;
     ArrayList<UsuarioPrincipal> lista;
     SQLiteDatabase sql;
-    String bd="BDUsuarios";
+    String bd="ProtegidasBD";
     String tabla="create table if not exists usuarioprincipal(usuariop_id integer primary key autoincrement,  nombre text, apellido text, usuario text, pass text, telefono text, direccion text, comuna text, rol_id integer)";
 
     public daoUsuarioPrincipal(Context c){
