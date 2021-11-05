@@ -9,12 +9,12 @@
     android:background="@drawable/gradient_background">
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        android:layout_width="350dp"
+        android:layout_width="358dp"
+        android:layout_height="480dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:layout_height="550dp"
-        android:layout_centerHorizontal="true">
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
 
         <ScrollView
             android:layout_width="match_parent"

@@ -16,7 +16,8 @@
         android:layout_gravity="center"
         android:textSize="25sp"
         android:layout_marginTop="20sp"
-        android:textColor="@color/white"
+        android:textColor="#874da2"
+        android:textStyle="bold"
         />
 
 
@@ -29,8 +30,8 @@
         android:hint="Nombre"
         android:layout_marginTop="20sp"
         android:gravity="center_horizontal"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="#874da2"
+        android:textColorHint="#874da2"
 
         />
 
@@ -42,8 +43,8 @@
         android:gravity="center_horizontal"
         android:hint="Apellido"
         android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <EditText
         android:id="@+id/RegUser"
@@ -53,8 +54,8 @@
         android:hint="Nombre de Usuario"
         android:gravity="center_horizontal"
         android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <EditText
         android:id="@+id/RegPass"
@@ -64,8 +65,8 @@
         android:hint="Contraseña"
         android:gravity="center_horizontal"
         android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <EditText
         android:id="@+id/RegFono"
@@ -74,8 +75,8 @@
         android:layout_marginLeft="20dp"
         android:hint="Telefono"
         android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="#874da2"
+        android:textColorHint="#874da2"
         android:gravity="center_horizontal" />
 
     <EditText
@@ -86,8 +87,8 @@
         android:hint="Dirección"
         android:gravity="center_horizontal"
         android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <EditText
         android:id="@+id/RegComuna"
@@ -97,8 +98,8 @@
         android:hint="Comuna"
         android:inputType="text"
         android:gravity="center_horizontal"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <EditText
         android:id="@+id/RegRol"
@@ -115,20 +116,19 @@
         android:layout_width="124dp"
         android:layout_height="116dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="-20dp"
         android:src="@drawable/logoprotegidas" />
 
     <Button
         android:id="@+id/btnRegRegistrar"
-        android:layout_width="wrap_content"
+        android:layout_width="238dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="#673AB7"
+        android:background="@drawable/gradient_background2"
         android:text="Registrar Usuario"
-        android:textSize="23sp" />
-
-
+        android:textSize="23sp"
+        android:textColor="#FFFFFF"/>
 
 
 </LinearLayout>
