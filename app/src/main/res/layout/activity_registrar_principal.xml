@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     android:background="@drawable/gradient_background"
 
     tools:context=".RegistrarPrincipal">
@@ -112,23 +113,23 @@
         android:visibility="invisible"
         />
 
-    <ImageView
-        android:layout_width="124dp"
-        android:layout_height="116dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="-20dp"
-        android:src="@drawable/logoprotegidas" />
+
 
     <Button
         android:id="@+id/btnRegRegistrar"
         android:layout_width="238dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
         android:background="@drawable/gradient_background2"
         android:text="Registrar Usuario"
         android:textSize="23sp"
         android:textColor="#FFFFFF"/>
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="116dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logoprotegidas" />
 
 
 </LinearLayout>

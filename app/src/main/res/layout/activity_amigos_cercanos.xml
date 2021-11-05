@@ -7,29 +7,28 @@
     tools:context=".Amigos_Cercanos"
     android:background="@drawable/gradient_background">
 
+
     <TextView
         android:id="@+id/loc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="CIRCULO CERCANO"
-        android:textColor="#874da2"
-        android:textStyle="bold"
+        android:textColor="#000000"
         android:textColorHighlight="#000000"
         android:textColorLink="#000000"
         android:textIsSelectable="true"
         android:textSize="22sp" />
-
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:elegantTextHeight="true"
         android:padding="15dp"
         android:text="Selecciona tus amigos desde los contactos"
@@ -40,12 +39,12 @@
 
 
     <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="145dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        android:layout_width="350dp"
-        android:layout_marginTop="205dp"
-        android:layout_height="85dp"
-        android:layout_centerHorizontal="true">
+        app:cardElevation="20dp">
 
         <EditText
             android:id="@+id/fono1"
@@ -60,7 +59,7 @@
             android:layout_marginRight="14dp"
             android:layout_toStartOf="@+id/addContact2"
             android:layout_toLeftOf="@+id/addContact2"
-            android:inputType="phone"/>
+            android:inputType="phone" />
 
         <Button
             android:id="@+id/agregarContacto1"
@@ -70,18 +69,18 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginVertical="15dp"
-            android:layout_marginLeft = "200dp"
+            android:layout_marginLeft="200dp"
             android:background="@drawable/gradient_background2"
-            android:textColor="#ffffff"
             android:padding="10dp"
-            android:text="@string/add_contact" />
+            android:text="@string/add_contact"
+            android:textColor="#ffffff" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="85dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="335dp"
+        android:layout_marginTop="260dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -117,10 +116,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="85dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="455dp"
+        android:layout_marginTop="375dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 

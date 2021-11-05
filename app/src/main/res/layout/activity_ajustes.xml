@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="115dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:background="@drawable/gradient_background2"
         android:elevation="30dp"
         android:padding="10dp"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="220dp"
         android:background="@drawable/gradient_background2"
         android:elevation="30dp"
         android:padding="10dp"
@@ -76,12 +76,13 @@
     <!--        android:textSize="30sp" />-->
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
         android:layout_width="350dp"
-        android:layout_marginTop="390dp"
         android:layout_height="145dp"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="305dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -89,8 +90,8 @@
             android:layout_marginTop="10dp"
             android:padding="10dp"
             android:text="Enviar alerta automática cuando me quede de batería:"
-            android:textIsSelectable="true"
             android:textColor="#000000"
+            android:textIsSelectable="true"
             android:textSize="22dp"
             android:textStyle="bold" />
 
@@ -112,12 +113,13 @@
             android:layout_above="@id/seekBar"
             android:layout_marginTop="100dp"
             android:paddingHorizontal="15dp" />
+
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:layout_marginTop="100dp" />
 
 
     </androidx.cardview.widget.CardView>
