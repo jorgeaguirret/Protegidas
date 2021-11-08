@@ -19,20 +19,20 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="SOBRE NOSOTROS"
         android:textColor="#874da2"
-        android:textStyle="bold"
         android:textColorHighlight="#000000"
         android:textColorLink="#000000"
         android:textIsSelectable="true"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="325dp"
+        android:layout_width="356dp"
+        android:layout_height="387dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         app:cardBackgroundColor="#A15A0688"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp">
+        app:cardElevation="13dp">
 
         <TextView
             android:layout_width="315dp"
@@ -44,7 +44,7 @@
             android:elegantTextHeight="true"
             android:lineHeight="30dp"
             android:padding="15dp"
-            android:text="Esta aplicación ha sido desarrollada por el equipo de Aym Informática. Los miembros del equipo son: "
+            android:text="Esta aplicación ha sido desarrollada por el equipo estudiantes de Ingeniería en Informática de la Universidad Tecnoogica de Chile, Inacap Sede Maipú. "
             android:textColor="#FFFFFF"
             android:textIsSelectable="true"
             android:textSize="20sp" />
@@ -56,7 +56,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="220dp"
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:text="Juan Barra Urbina "
@@ -70,7 +70,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="205dp"
+            android:layout_marginTop="255dp"
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:text="Francisco Riveros Arias"
@@ -84,7 +84,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="255dp"
+            android:layout_marginTop="290dp"
             android:elegantTextHeight="true"
             android:padding="10dp"
             android:text="Jorge Aguirre Toledo"
@@ -94,75 +94,12 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="170dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="390dp"
-        app:cardBackgroundColor="#A15A0688"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:elegantTextHeight="true"
-            android:padding="10dp"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
-            android:text="Estudiantes de ..."
-            android:textColor="#FFFFFF"
-            android:textIsSelectable="true"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="45dp"
-            android:elegantTextHeight="true"
-            android:padding="10dp"
-            android:paddingLeft="15dp"
-            android:text="Universidad Tecnológica de Chile"
-            android:textColor="#FFFFFF"
-            android:textIsSelectable="true"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="85dp"
-            android:elegantTextHeight="true"
-            android:padding="10dp"
-            android:paddingLeft="15dp"
-            android:text="Inacap, Maipú"
-            android:textColor="#FFFFFF"
-            android:textIsSelectable="true"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="63dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="145dp"
-            android:layout_marginTop="120dp"
-            android:elegantTextHeight="true"
-            android:padding="10dp"
-            android:paddingLeft="15dp"
-            android:text="www.protegidas.cl"
-            android:textColor="#FFFFFF"
-            android:textIsSelectable="true"
-            android:textSize="18sp" />
-
-    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        app:srcCompat="@drawable/fondoprotegidas" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

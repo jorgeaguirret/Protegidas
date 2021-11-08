@@ -23,11 +23,11 @@
         android:paddingVertical="10dp"
         android:text="HISTORIAL DE ALERTAS ENVIADAS"
         android:textColor="#874da2"
-        android:textStyle="bold"
         android:textColorHighlight="#000000"
         android:textColorLink="#000000"
         android:textIsSelectable="true"
-        android:textSize="21sp" />
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
@@ -50,5 +50,7 @@
                 android:textColor="#7A2B9F" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
 
 </RelativeLayout>

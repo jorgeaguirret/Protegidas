@@ -124,6 +124,13 @@
 
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        app:srcCompat="@drawable/fondoprotegidas" />
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

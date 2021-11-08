@@ -56,7 +56,7 @@ public class MainActivityGps extends AppCompatActivity {
         blistar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivityGps.this,ListaCoordenadas.class);
+                Intent intent = new Intent(MainActivityGps.this, HistorialUbicacionTiempoReal.class);
                 startActivity(intent);
             }
         });

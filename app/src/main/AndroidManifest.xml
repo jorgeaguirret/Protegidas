@@ -26,7 +26,7 @@
             android:name=".RegistrarPrincipal"
             android:exported="true" />
         <activity
-            android:name=".Principal"
+            android:name=".PrincipalPatron"
             android:exported="true" />
         <!--
                 <activity
@@ -37,7 +37,7 @@
             android:name=".MainActivityGps"
             android:exported="true" />
         <activity
-            android:name=".ListaCoordenadas"
+            android:name=".HistorialUbicacionTiempoReal"
             android:exported="true" />
         <activity
             android:name=".Splash"
@@ -78,7 +78,7 @@
             android:exported="true"/>
         -->
         <activity
-            android:name=".MainActivity5"
+            android:name=".GuardarPatron"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
