@@ -78,8 +78,8 @@ public class Ajustes extends AppCompatActivity {
 
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         textView = (TextView) findViewById(R.id.textView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);

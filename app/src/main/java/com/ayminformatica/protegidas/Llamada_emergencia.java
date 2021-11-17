@@ -20,8 +20,8 @@ public class Llamada_emergencia extends AppCompatActivity {
 
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
 
         //---------Llamada de emergencia a carabineros

@@ -54,8 +54,8 @@ public class Panel_Alerta extends AppCompatActivity {
 
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         permisos.add(ACCESS_FINE_LOCATION);
         permisos.add(ACCESS_COARSE_LOCATION);

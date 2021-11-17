@@ -28,8 +28,8 @@ public class GuardarPatron extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guardar_patron);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         Paper.init(this);
         final String save_pattern = Paper.book().read(save_pattern_key);

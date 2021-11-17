@@ -37,8 +37,8 @@ public class MainActivityGps extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maingps);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         tDireccion = (TextView) findViewById(R.id.txtDireccion);
         bGuardar = (Button) findViewById(R.id.btnGuardar);

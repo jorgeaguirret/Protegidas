@@ -19,8 +19,8 @@ public class SobreNosotros extends AppCompatActivity {
 
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);

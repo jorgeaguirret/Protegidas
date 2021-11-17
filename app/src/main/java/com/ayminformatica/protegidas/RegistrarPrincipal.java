@@ -21,8 +21,8 @@ public class RegistrarPrincipal extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_principal);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         nom=(EditText)findViewById(R.id.RegNombre);
         ap=(EditText)findViewById(R.id.RegApellido);

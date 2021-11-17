@@ -18,8 +18,8 @@ public class Descripcion extends AppCompatActivity {
         setContentView(R.layout.activity_descripcion);
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 

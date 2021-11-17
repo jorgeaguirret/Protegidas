@@ -30,8 +30,8 @@ public class PrincipalPatron extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Paper.init(this);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         final String save_pattern = Paper.book().read(save_pattern_key);
         if(save_pattern != null && !save_pattern.equals("null"))

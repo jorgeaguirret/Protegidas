@@ -20,8 +20,8 @@ public class HistorialUbicacionTiempoReal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial_ubicacion_tiempo_real);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         listac = (ListView)findViewById(R.id.listView);
         miDB = new DataBaseHelperGps(this);

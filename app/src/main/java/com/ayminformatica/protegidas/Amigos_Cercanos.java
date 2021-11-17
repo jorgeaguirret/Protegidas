@@ -31,8 +31,8 @@ public class Amigos_Cercanos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amigos_cercanos);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
+        //ActionBar actionBar = getSupportActionBar();
+        //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 
         agregar_no1 = (EditText)findViewById(R.id.fono1);
         agregar_no2 = (EditText)findViewById(R.id.fono2);
