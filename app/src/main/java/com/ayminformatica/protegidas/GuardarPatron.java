@@ -48,7 +48,37 @@ public class GuardarPatron extends AppCompatActivity {
 
                 }
 
+                private int counter = 0;
+
                 @Override
+                public void onComplete(List<PatternLockView.Dot> pattern) {
+                    final_pattern = PatternLockUtils.patternToString(mPatternLockView,pattern);
+                    if(final_pattern.equals(save_pattern)){
+                        Toast.makeText(GuardarPatron.this, "El patron es correcto", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(GuardarPatron.this,Splash.class);
+                        startActivity(intent);
+
+
+                    }else{
+
+                        if(counter > 3){//Revisa si contador es mayor que 3
+
+                            //Envia a Activity de error
+                            Intent intent = new Intent(GuardarPatron.this, Main.class);
+                            startActivity(intent);
+
+                        }else{
+                            Toast.makeText(GuardarPatron.this, "Error! Intenta otra vez!", Toast.LENGTH_SHORT).show();
+
+                        }
+                        counter++; //Incrementa contador.
+
+                    }
+
+
+                }
+
+                /*@Override
                 public void onComplete(List<PatternLockView.Dot> pattern) {
                     final_pattern = PatternLockUtils.patternToString(mPatternLockView,pattern);
                     if(final_pattern.equals(save_pattern)){
@@ -60,7 +90,7 @@ public class GuardarPatron extends AppCompatActivity {
                     }else{ Toast.makeText(GuardarPatron.this, "Error! Intenta otra vez!", Toast.LENGTH_SHORT).show();}
 
 
-                }
+                }*/
 
                 @Override
                 public void onCleared() {

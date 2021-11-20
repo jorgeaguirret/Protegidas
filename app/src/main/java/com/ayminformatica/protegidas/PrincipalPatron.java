@@ -49,6 +49,8 @@ public class PrincipalPatron extends AppCompatActivity {
 
                 }
 
+                private int counter = 0;
+
                 @Override
                 public void onComplete(List<PatternLockView.Dot> pattern) {
                     final_pattern = PatternLockUtils.patternToString(mPatternLockView,pattern);
@@ -58,7 +60,21 @@ public class PrincipalPatron extends AppCompatActivity {
                         startActivity(intent);
 
 
-                    }else{ Toast.makeText(PrincipalPatron.this, "Error! Intenta otra vez!", Toast.LENGTH_SHORT).show();}
+                    }else{
+
+                        if(counter > 3){//Revisa si contador es mayor que 3
+
+                            //Envia a Activity de error
+                            Intent intent = new Intent(PrincipalPatron.this, Amigos_Cercanos.class);
+                            startActivity(intent);
+
+                        }else{
+                            Toast.makeText(PrincipalPatron.this, "Error! Intenta otra vez!", Toast.LENGTH_SHORT).show();
+
+                        }
+                        counter++; //Incrementa contador.
+
+                    }
 
 
                 }
