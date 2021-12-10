@@ -217,19 +217,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="27dp"
-                        android:text="texto 1"
+                        android:text="Llamar al 149"
                         android:textColor="#000000"
                         android:textSize="24dp" />
 
                     <Button
-                        android:id="@+id/llamar_1"
+                        android:id="@+id/llamar_fono_familia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="20dp"
                         android:layout_marginLeft="220dp"
                         android:background="@drawable/gradient_background4"
                         android:padding="10dp"
-                        android:text="Disponible 1"
+                        android:text="Fono Familia"
                         android:textColor="#ffffff"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
@@ -247,19 +247,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="27dp"
-                        android:text="texto 2"
+                        android:text="Llamar al 101"
                         android:textColor="#000000"
                         android:textSize="24dp" />
 
                     <Button
-                        android:id="@+id/llamar_2"
+                        android:id="@+id/llamar_denuncia_seguro"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="20dp"
                         android:layout_marginLeft="220dp"
                         android:background="@drawable/gradient_background4"
                         android:padding="10dp"
-                        android:text="Disponible 2"
+                        android:text="Denuncias"
                         android:textColor="#ffffff"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
@@ -277,19 +277,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="27dp"
-                        android:text="texto 3"
+                        android:text="Llamar al 137"
                         android:textColor="#000000"
                         android:textSize="24dp" />
 
                     <Button
-                        android:id="@+id/llamar_3"
+                        android:id="@+id/llamar_armada"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="20dp"
                         android:layout_marginLeft="220dp"
                         android:background="@drawable/gradient_background4"
                         android:padding="10dp"
-                        android:text="Disponible 3"
+                        android:text="Rescate"
                         android:textColor="#ffffff"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>

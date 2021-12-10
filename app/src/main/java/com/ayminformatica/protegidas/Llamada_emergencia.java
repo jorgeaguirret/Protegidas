@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Llamada_emergencia extends AppCompatActivity {
-    Button llamarCarabineros, llamarAmbulancia, llamarBomberos, llamarFonoMujer , btAtras;
+    Button llamarArmada,llamarCarabineros, llamarAmbulancia, llamarBomberos, llamarFonoMujer , btAtras, llamarPdi,llamarFonoFamilia,llamarDenunciaSeguro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,57 @@ public class Llamada_emergencia extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //---------Llamada de emergencia a fono pdi
+        llamarPdi = (Button) findViewById(R.id.llamar_pdi);
+        llamarPdi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Llamada_emergencia.this, "Llamando a Pdi", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:134"));                    //---Fono PDI
+                startActivity(intent);
+            }
+        });
+
+        //---------Llamada de emergencia a fono familia
+        llamarFonoFamilia = (Button) findViewById(R.id.llamar_fono_familia);
+        llamarFonoFamilia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Llamada_emergencia.this, "Llamando a Fono familia", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:149"));                    //---Fono Fono Familia
+                startActivity(intent);
+            }
+        });
+
+        //---------Llamada de emergencia a Denuncia seguro
+        llamarDenunciaSeguro = (Button) findViewById(R.id.llamar_denuncia_seguro);
+        llamarDenunciaSeguro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Llamada_emergencia.this, "Llamando a Denuncia Seguro", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:6004000101"));                    //---Fono denuncia
+                startActivity(intent);
+            }
+        });
+
+        //---------Llamada de emergencia a Armada
+        llamarArmada = (Button) findViewById(R.id.llamar_armada);
+        llamarArmada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Llamada_emergencia.this, "Llamando a Rescate Costero", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:137"));                    //---Fono aRMADA
+                startActivity(intent);
+            }
+        });
+
+
+
 
         btAtras = (Button) findViewById(R.id.volver);
         btAtras.setOnClickListener(new View.OnClickListener() {
