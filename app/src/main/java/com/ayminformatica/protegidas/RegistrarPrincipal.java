@@ -61,7 +61,8 @@ public class RegistrarPrincipal extends AppCompatActivity implements View.OnClic
                     Toast.makeText(this,"¡Error! Todos los campos son obligatorios...",Toast.LENGTH_LONG).show();
                 }else if(dao.insertUsuario(u)){
                     //Toast.makeText(this,"Usuario Registrado Exitosamente",Toast.LENGTH_LONG).show();
-                   Toast.makeText(this,"Por ser la primera vez, Sugerimos que Reinicies la aplicacion para que el GPS funcione correctamente",Toast.LENGTH_LONG).show();
+                   Toast.makeText(this,"Por ser la primera vez, Sugerimos que Reinicies la aplicacion para que " +
+                           "el GPS funcione correctamente",Toast.LENGTH_LONG).show();
 
                    Intent i2=new Intent(RegistrarPrincipal.this,MainActivity.class);
                     startActivity(i2);

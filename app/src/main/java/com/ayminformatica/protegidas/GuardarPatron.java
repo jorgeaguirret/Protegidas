@@ -85,11 +85,7 @@ public class GuardarPatron extends AppCompatActivity {
                         Toast.makeText(GuardarPatron.this, "El patron es correcto", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(GuardarPatron.this,Splash.class);
                         startActivity(intent);
-
-
                     }else{ Toast.makeText(GuardarPatron.this, "Error! Intenta otra vez!", Toast.LENGTH_SHORT).show();}
-
-
                 }*/
 
                 @Override

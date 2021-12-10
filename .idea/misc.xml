@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/DSCWoW-Personal-Safety-Alertz-App-main/app/src/main/res/layout/activity_dashboard.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/DSCWoW-Personal-Safety-Alertz-App-main/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/drawable/appbar_background.xml" value="0.24814814814814815" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/drawable/bottom_navigation_gradient.xml" value="0.64875" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/drawable/gradient_background.xml" value="0.15555555555555556" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/drawable/gradient_background2.xml" value="0.15555555555555556" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/drawable/gradient_background3.xml" value="0.15555555555555556" />
@@ -34,17 +35,17 @@
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_main2.xml" value="0.14356884057971014" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_main5.xml" value="0.264" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_maingps.xml" value="0.176" />
-        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_panel_alerta.xml" value="0.176" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_panel_alerta.xml" value="0.6" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_principal.xml" value="0.1" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_principal_patron.xml" value="0.61" />
-        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_registrar_principal.xml" value="0.176" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_registrar_principal.xml" value="0.72" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_registrar_principalOn.xml" value="0.1" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_registrar_principal_on.xml" value="0.1" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_settings.xml" value="0.2259963768115942" />
-        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_sobre_nosotros.xml" value="0.264" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_sobre_nosotros.xml" value="0.72" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/editar.xml" value="0.1609375" />
-        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/main.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/main.xml" value="0.4" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/registrarprincipal.xml" value="0.18115942028985507" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/layout/splash.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Jorge/AndroidStudioProjects/Protegidas/app/src/main/res/menu/menu_navigation.xml" value="0.4" />

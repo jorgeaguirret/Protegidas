@@ -19,28 +19,28 @@
         android:id="@+id/User"
         android:layout_width="304dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/user"
-        android:drawableTint="@color/white"
+        android:drawableTint="#874da2"
         android:gravity="center"
         android:hint="Ingresar Nombre de Usuario"
         android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <EditText
         android:id="@+id/Pass"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="80dp"
         android:drawableLeft="@drawable/lock"
-        android:drawableTint="@color/white"
+        android:drawableTint="#874da2"
         android:gravity="center"
         android:hint="Ingresar Contraseña"
         android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#874da2"
+        android:textColorHint="#874da2" />
 
     <Button
         android:id="@+id/btnEntrar"
@@ -48,7 +48,7 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#9225AA"
+        android:background="@drawable/gradient_background2"
         android:shadowColor="#F1EBEB"
         android:text="Iniciar Sesión" />
 
@@ -58,18 +58,9 @@
         android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="#9C27B0"
+        android:background="@drawable/gradient_background2"
         android:shadowColor="#F1EBEB"
         android:text="Registrar" />
 
-    <Button
-        android:id="@+id/btnRegistrarcc"
-        android:layout_width="146dp"
-        android:layout_height="66dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="#9C27B0"
-        android:shadowColor="#F1EBEB"
-        android:text="Registrar CC" />
 
 </LinearLayout>
