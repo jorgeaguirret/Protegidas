@@ -7,17 +7,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Descripcion extends AppCompatActivity {
+
+    TextView tvweb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descripcion);
 
-
+        tvweb = findViewById(R.id.tvweb);
+        tvweb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Webview.class);
+                startActivity(intent);
+            }
+        });
         //ActionBar actionBar = getSupportActionBar();
         //.setBackgroundDrawable(getResources().getDrawable(R.drawable.appbar_background));
 

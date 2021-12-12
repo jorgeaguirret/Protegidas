@@ -9,8 +9,8 @@
     android:background="@drawable/gradient_background">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="358dp"
-        android:layout_height="450dp"
+        android:layout_width="373dp"
+        android:layout_height="415dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         app:cardCornerRadius="30dp"
@@ -174,6 +174,27 @@ Esta aplicación ayudara cuando su seguridad está en riesgo al ser un puente de
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="450dp"
+        android:textColor="#874da2"
+        android:text="Para mas información haz clic en"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tvweb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="470dp"
+        android:text="www.protegidas.cl"
+        android:textColor="#874da2"
+        android:textStyle="bold"
+        android:textSize="25dp" />
 
     <ImageView
         android:id="@+id/imageView"
